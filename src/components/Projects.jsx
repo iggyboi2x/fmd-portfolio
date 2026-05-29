@@ -41,6 +41,14 @@ const projects = [
     demo: 'https://bst-sweetbakes.vercel.app/',
     repo: null,
   },
+  {
+    index: '06',
+    title: 'ANGAY',
+    desc: 'Codeveloped A demographic-informed food assistance coordination system that connects foodbanks and barangay communities for equitable, transparent, and needs-responsive aid distribution.',
+    stack: ['React', 'TypeScript', 'Supabase'],
+    demo: 'https://angay.vercel.app/',
+    repo: null,
+  },
 ]
 
 export default function Projects() {
