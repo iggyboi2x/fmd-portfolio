@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --black:   #0c0c0c;
+  --grey-10: #111111;
+  --grey-15: #171717;
+  --grey-20: #1e1e1e;
+  --grey-30: #2a2a2a;
+  --grey-50: #4a4a4a;
+  --grey-60: #606060;
+  --grey-80: #909090;
+  --grey-90: #b8b8b8;
+  --white:   #f0f0f0;
+  --pure:    #ffffff;
+
+  --sans:    'DM Sans', sans-serif;
+  --serif:   'Playfair Display', serif;
+  --mono:    'DM Mono', monospace;
+
+  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+
+::selection { background: var(--white); color: var(--black); }
+
+/* ── Shared layout ─────────────────────────────────── */
+.wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 7rem 3rem;
+}
+
+/* ── Section label ──────────────────────────────────── */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  color: var(--grey-60);
+  text-transform: uppercase;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 1px;
+  background: var(--grey-50);
+}
+
+/* ── Section title ──────────────────────────────────── */
+.heading {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--pure);
+  margin-bottom: 3rem;
+}
+
+/* ── Divider ────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background: var(--grey-20);
+  margin: 0;
+}
+
+/* ── Buttons ────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.5rem;
+  border-radius: 2px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s var(--ease);
+  text-transform: uppercase;
+}
+.btn-solid {
+  background: var(--white);
+  color: var(--black);
+  font-weight: 500;
+}
+.btn-solid:hover {
+  background: var(--pure);
+  transform: translateY(-2px);
+}
+.btn-outline {
+  background: transparent;
+  color: var(--grey-80);
+  border: 1px solid var(--grey-30);
+}
+.btn-outline:hover {
+  border-color: var(--grey-80);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+  .wrapper { padding: 5rem 1.5rem; }
+}
