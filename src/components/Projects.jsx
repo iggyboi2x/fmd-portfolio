@@ -44,8 +44,8 @@ const projects = [
   {
     index: '06',
     title: 'ANGAY',
-    desc: 'Codeveloped A demographic-informed food assistance coordination system that connects foodbanks and barangay communities for equitable, transparent, and needs-responsive aid distribution.',
-    stack: ['React', 'TypeScript', 'Supabase'],
+    desc: 'Co-Developed a school project called "ANGAY": A demographic-informed food assistance coordination system that connects foodbanks and barangay communities for equitable, transparent, and needs-responsive aid distribution.',
+    stack: ['HTML', 'CSS', 'Tailwind CSS', 'Vite'],
     demo: 'https://angay.vercel.app/',
     repo: null,
   },
