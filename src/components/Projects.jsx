@@ -4,7 +4,7 @@ const projects = [
   {
     index: '01',
     title: 'Freesoul Cyber Gadgets',
-    desc: 'Full-stack business website for a device repair shop featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
+    desc: 'Built with my dev team — a full-stack business website for a device repair shop featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Three.js', 'Resend'],
     demo: 'https://freesoul-ph.vercel.app/',
     repo: null,
