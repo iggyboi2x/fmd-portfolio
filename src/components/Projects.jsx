@@ -5,7 +5,7 @@ const projects = [
     index: '01',
     title: 'Freesoul Cyber Gadgets',
     desc: 'Full-stack business website for a device repair shop featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
-    stack: ['React', 'Laravel', 'PostgreSQL', 'Supabase'],
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Three.js', 'Resend'],
     demo: 'https://freesoul-ph.vercel.app/',
     repo: null,
   },
@@ -13,7 +13,7 @@ const projects = [
     index: '02',
     title: 'UCLM PSITS Voting System',
     desc: 'Co-developed and deployed a real-time digital balloting platform used by the UCLM CCS department to elect a new slate of PSITS student officers.',
-    stack: ['React', 'Supabase', 'PostgreSQL'],
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Express', 'PostgreSQL', 'JWT', 'bcryptjs'],
     demo: null,
     repo: 'https://github.com/ire-zepelli/voting-system',
   },
@@ -21,7 +21,7 @@ const projects = [
     index: '03',
     title: 'Marina Seaview',
     desc: 'Designed and developed an inquiry reservation system for a thriving local events venue in Lapu-Lapu, featuring a gallery, menu showcase, and contact/reservation section.',
-    stack: ['React', 'Tailwind CSS', 'Vite'],
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     demo: 'https://marina-seaview.vercel.app/',
     repo: null,
   },
@@ -29,7 +29,7 @@ const projects = [
     index: '04',
     title: 'StringGuard',
     desc: 'A secure, privacy-focused text storage web app inspired by ProtectedText — supports rich text editing and multi-language code editing with syntax highlighting.',
-    stack: ['React', 'TypeScript', 'Supabase'],
+    stack: ['React', 'Vite', 'Supabase', 'Tiptap', 'CodeMirror', 'bcryptjs'],
     demo: 'https://stringguard.vercel.app/',
     repo: null,
   },
@@ -37,16 +37,8 @@ const projects = [
     index: '05',
     title: 'BST Sweetbakes',
     desc: 'Designed and developed an inquiry system for a local bakery, letting users browse offerings and send order inquiries directly to the business via Messenger.',
-    stack: ['React', 'Tailwind CSS', 'Vite'],
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     demo: 'https://bst-sweetbakes.vercel.app/',
-    repo: null,
-  },
-  {
-    index: '06',
-    title: 'ANGAY',
-    desc: 'Co-Developed a school project called "ANGAY": A demographic-informed food assistance coordination system that connects foodbanks and barangay communities for equitable, transparent, and needs-responsive aid distribution.',
-    stack: ['HTML', 'CSS', 'Tailwind CSS', 'Vite'],
-    demo: 'https://angay.vercel.app/',
     repo: null,
   },
 ]
@@ -57,7 +49,7 @@ export default function Projects() {
       <div className="divider" />
       <div className="wrapper">
         <p className="eyebrow">Projects</p>
-        <h2 className="heading">Developed Works.</h2>
+        <h2 className="heading">Selected work.</h2>
         <div className="projects-list">
           {projects.map(p => (
             <div className="project-row" key={p.title}>
