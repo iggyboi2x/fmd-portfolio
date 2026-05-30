@@ -29,14 +29,6 @@ export default function About() {
               <span className="stat-num">5+</span>
               <span className="stat-label">Projects Developed</span>
             </div>
-            <div className="about-stat">
-              <span className="stat-num">3rd</span>
-              <span className="stat-label">Year BSIT</span>
-            </div>
-            <div className="about-stat">
-              <span className="stat-num">Dean's</span>
-              <span className="stat-label">Lister 2023–present</span>
-            </div>
           </div>
         </div>
       </div>

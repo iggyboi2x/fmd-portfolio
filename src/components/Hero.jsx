@@ -20,7 +20,7 @@ export default function Hero() {
           Building real products at the intersection of design and functionality.
         </p>
         <div className="hero-ctas anim" style={{ '--d': '440ms' }}>
-          <a href="#projects" className="btn btn-solid">View Work</a>
+          <a href="#projects" className="btn btn-solid">View Projects</a>
           <a href="#contact" className="btn btn-outline">Contact</a>
         </div>
       </div>
