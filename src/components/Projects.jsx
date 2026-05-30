@@ -57,7 +57,7 @@ export default function Projects() {
       <div className="divider" />
       <div className="wrapper">
         <p className="eyebrow">Projects</p>
-        <h2 className="heading">Selected work.</h2>
+        <h2 className="heading">Developed Works.</h2>
         <div className="projects-list">
           {projects.map(p => (
             <div className="project-row" key={p.title}>
