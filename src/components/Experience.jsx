@@ -28,7 +28,7 @@ export default function Experience() {
       <div className="divider" />
       <div className="wrapper">
         <p className="eyebrow">Experience</p>
-        <h2 className="heading">Education &<br />Certifications.</h2>
+        <h2 className="heading">Education &amp;<br />Certifications.</h2>
 
         <div className="exp-list">
           {education.map(e => (

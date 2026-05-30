@@ -18,7 +18,7 @@ export default function Contact() {
       })
       if (res.ok) { setStatus('sent'); setForm({ name: '', email: '', message: '' }) }
       else setStatus('error')
-    } catch { setStatus('error') }
+    } catch (_err) { setStatus('error') }
   }
 
   return (
