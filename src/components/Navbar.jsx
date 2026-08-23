@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-const links = ['about', 'projects', 'experience', 'blog', 'contact']
+const links = ['about', 'skills', 'projects', 'blog', 'experience', 'contact']
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -15,14 +15,23 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
-      <span className="nav-logo">FMD</span>
-      <ul className={`nav-links ${open ? 'open' : ''}`}>
-        {links.map(l => (
-          <li key={l}><a href={`#${l}`} onClick={() => setOpen(false)}>{l}</a></li>
-        ))}
-      </ul>
-      <button className="nav-burger" onClick={() => setOpen(!open)} aria-label="menu">
-        <span /><span /><span />
+      <a href="#hero" className="nav-badge" aria-label="Back to top">FMD</a>
+
+      <div className={`nav-links-drop ${open ? 'open' : ''}`}>
+        <ul className="nav-links">
+          {links.map(l => (
+            <li key={l}><a href={`#${l}`} onClick={() => setOpen(false)}>{l}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <button
+        className={`nav-burger ${open ? 'open' : ''}`}
+        onClick={() => setOpen(!open)}
+        aria-label={open ? 'Close menu' : 'Open menu'}
+        aria-expanded={open}
+      >
+        <span /><span />
       </button>
     </nav>
   )

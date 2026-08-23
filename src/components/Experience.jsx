@@ -5,7 +5,7 @@ const education = [
     period: '2023 — Present',
     role: 'Bachelor of Science in Information Technology',
     company: 'University of Cebu Lapu-Lapu and Mandaue',
-    desc: 'Currently in 3rd year. Dean\'s Lister since 2023. Focused on fullstack web development, software engineering, and networking fundamentals.',
+    desc: "Currently in 4th year, Academic Scholar. Focused on full-stack web development, software engineering, and networking fundamentals.",
   },
   {
     period: '2021 — 2023',
@@ -16,19 +16,19 @@ const education = [
 ]
 
 const certifications = [
-  { title: 'Networking Essentials', issuer: 'Cisco Networking Academy', year: '2023' },
-  { title: 'Get Connected', issuer: 'Cisco Networking Academy', year: '2023' },
-  { title: 'Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', year: '2023' },
-  { title: "Dean's Lister", issuer: 'UC Lapu-Lapu and Mandaue', year: '2023–Present' },
+  { title: 'Claude 101', issuer: 'Anthropic', color: 'yellow', link: 'https://verify.skilljar.com/c/3yczqc6p63w3' },
+  { title: 'Academic Scholar', issuer: 'UC Lapu-Lapu and Mandaue', color: 'bone' },
+  { title: 'Networking Essentials', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
+  { title: 'Get Connected', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
+  { title: 'Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
 ]
 
 export default function Experience() {
   return (
-    <section id="experience">
-      <div className="divider" />
+    <section id="experience" className="panel panel-blue">
+      <div className="seam" />
       <div className="wrapper">
-        <p className="eyebrow">Experience</p>
-        <h2 className="heading">Education &amp;<br />Certifications.</h2>
+        <h2 className="heading">Education &amp;<br /><em>certifications.</em></h2>
 
         <div className="exp-list">
           {education.map(e => (
@@ -44,14 +44,20 @@ export default function Experience() {
         </div>
 
         <div className="certs-section">
-          <p className="eyebrow" style={{ marginBottom: '1.5rem' }}>Certifications</p>
           <div className="certs-grid">
-            {certifications.map(c => (
-              <div className="cert-card" key={c.title}>
-                <span className="cert-title">{c.title}</span>
-                <span className="cert-meta">{c.issuer} · {c.year}</span>
-              </div>
-            ))}
+            {certifications.map(c => {
+              const Tag = c.link ? 'a' : 'div'
+              return (
+                <Tag
+                  className={`cert-plate cert-${c.color}`}
+                  key={c.title}
+                  {...(c.link ? { href: c.link, target: '_blank', rel: 'noreferrer' } : {})}
+                >
+                  <span className="cert-title">{c.title}{c.link ? ' ↗' : ''}</span>
+                  <span className="cert-meta">{c.issuer}{c.meta ? ` · ${c.meta}` : ''}</span>
+                </Tag>
+              )
+            })}
           </div>
         </div>
       </div>

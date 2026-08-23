@@ -2,43 +2,34 @@ import './Skills.css'
 
 const skillGroups = [
   {
-    title: 'Languages',
-    items: ['JavaScript', 'TypeScript', 'PHP', 'Java', 'C', 'SQL'],
+    title: 'Production-ready',
+    note: 'What I build client work with',
+    color: 'yellow',
+    items: ['React.js', 'Next.js', 'Tailwind CSS', 'Supabase', 'Vite', 'SQL'],
   },
   {
-    title: 'Frontend',
-    items: ['React', 'Vite', 'Tailwind CSS', 'HTML5', 'CSS3'],
-  },
-  {
-    title: 'Backend',
-    items: ['Laravel'],
-  },
-  {
-    title: 'Database & Auth',
-    items: ['PostgreSQL', 'Supabase', 'MySQL'],
-  },
-  {
-    title: 'Tools & Design',
-    items: ['Git', 'GitHub', 'Figma'],
+    title: 'Experienced',
+    note: 'Comfortable shipping with',
+    color: 'red',
+    items: ['PHP', 'Laravel', 'Node.js', 'Figma', 'Git / GitHub', 'Vercel', 'Custom Domains', 'SEO Optimization'],
   },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills">
-      <div className="divider" />
+    <section id="skills" className="panel panel-ink">
       <div className="wrapper">
-        <p className="eyebrow">Skills</p>
-        <h2 className="heading">What I work with.</h2>
-        <div className="skills-table">
+        <h2 className="heading">What I <em>work with.</em></h2>
+        <div className="skills-groups">
           {skillGroups.map(group => (
-            <div className="skills-row" key={group.title}>
-              <div className="skills-row-label">
-                <span>{group.title}</span>
+            <div className="skills-group" key={group.title}>
+              <div className="skills-group-head">
+                <h3>{group.title}</h3>
+                <span>{group.note}</span>
               </div>
-              <div className="skills-row-items">
+              <div className="skills-items">
                 {group.items.map(item => (
-                  <span className="skill-pill" key={item}>{item}</span>
+                  <span className={`skill-pill pill-${group.color}`} key={item}>{item}</span>
                 ))}
               </div>
             </div>

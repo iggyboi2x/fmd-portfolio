@@ -2,7 +2,7 @@ import './Footer.css'
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer panel panel-ink">
       <div className="footer-inner">
         <span className="footer-name">Francis Miguel Diano © 2026</span>
         <span className="footer-note">Designed &amp; built by hand · Cebu, PH</span>

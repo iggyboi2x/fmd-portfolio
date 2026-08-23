@@ -1,49 +1,49 @@
-.skills-table { display: flex; flex-direction: column; }
-
-.skills-row {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 2rem;
-  align-items: center;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid var(--grey-20);
-  transition: background 0.2s;
-}
-.skills-row:first-child { border-top: 1px solid var(--grey-20); }
-
-.skills-row-label {
+.skills-groups {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-}
-.skills-row-label span:first-child {
-  font-family: var(--serif);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--pure);
-}
-.skills-note {
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--grey-50);
+  gap: 3.5rem;
 }
 
-.skills-row-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.skills-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+  border-bottom: 3px solid var(--ink-soft);
+  padding-bottom: 0.75rem;
+}
+.skills-group-head h3 {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: var(--bone);
+}
+.skills-group-head span {
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  color: #9a9686;
+}
+
+.skills-items { display: flex; flex-wrap: wrap; gap: 0.65rem; }
 
 .skill-pill {
   font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid var(--grey-30);
-  border-radius: 2px;
-  color: var(--grey-80);
-  transition: border-color 0.2s, color 0.2s;
+  font-weight: 500;
+  font-size: 0.8rem;
+  padding: 0.55rem 1rem;
+  border: 2px solid var(--ink);
+  border-radius: 6px;
+  color: var(--ink);
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
-.skill-pill:hover { border-color: var(--grey-60); color: var(--white); }
+.skill-pill:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+
+.pill-yellow { background: var(--yellow); }
+.pill-red { background: var(--red-deep); color: var(--bone); border-color: var(--bone); box-shadow: 3px 3px 0 var(--bone); }
+.pill-red:hover { box-shadow: 5px 5px 0 var(--bone); }
 
 @media (max-width: 600px) {
-  .skills-row { grid-template-columns: 1fr; gap: 0.75rem; }
+  .skills-group-head { flex-direction: column; gap: 0.25rem; }
 }

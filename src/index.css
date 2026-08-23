@@ -1,123 +1,191 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Archivo:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+/*
+  DIRECTION — "Jeepney Livery"
+  THESIS: the site reads as a hand-decorated Cebu jeepney, not a design-agency
+  résumé — full-bleed paint-panel sections, chrome route plates, riveted
+  signboards, and stickered project panels stand in for the eyebrow-label,
+  numbered-row, dark-editorial-serif portfolio this category defaults to.
+  OWN-WORLD: bone/ink base, four saturated body-panel colors (jeepney red,
+  marigold, cobalt, kelly green), Bungee display signage type, Archivo body,
+  JetBrains Mono reserved for tech-stack data tags only. Hard offset shadows
+  and thick ink keylines are the world's depth system, not a neobrutalist
+  costume — they are how painted panels and stickers actually sit on metal.
+  STORY: a recruiter or small-business owner sees a real, ships-things
+  developer with unmistakable personality, scans stack + projects fast, and
+  contacts him.
+  FIRST VIEWPORT: ink-black hero panel, oversized yellow Bungee name stacked
+  left, chrome "available" plate top-left, red/blue accent bars right,
+  primary CTA plate bottom-left.
+  FORM: full-palette panel-per-section, chosen directly with the user
+  (bold & colorful direction, confirmed via question) rather than the
+  concept-seed dice — disclosed substitution, no image-gen/decision-page
+  tooling available in this session.
+  FINISH: unreviewed and undocumented is unfinished; this build ends with
+  the finish review, the verdict, and DESIGN.md.
+*/
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --black:   #0c0c0c;
-  --grey-10: #111111;
-  --grey-15: #171717;
-  --grey-20: #1e1e1e;
-  --grey-30: #2a2a2a;
-  --grey-50: #4a4a4a;
-  --grey-60: #606060;
-  --grey-80: #909090;
-  --grey-90: #b8b8b8;
-  --white:   #f0f0f0;
-  --pure:    #ffffff;
+  --ink:        #14140f;
+  --ink-soft:   #2a2820;
+  --bone:       #f6efdf;
+  --bone-dim:   #eadfc6;
+  --red:        #e2412a;
+  --red-deep:   #a32d1b;
+  --red-bright: #ff5a3d;
+  --yellow:     #f5b324;
+  --yellow-deep:#c88914;
+  --blue:       #2447c4;
+  --blue-deep:  #16307f;
+  --green:      #1c8f4e;
+  --green-deep: #0f5c31;
+  --chrome-hi:  #eef0f3;
+  --chrome-lo:  #9aa0ac;
 
-  --sans:    'DM Sans', sans-serif;
-  --serif:   'Playfair Display', serif;
-  --mono:    'DM Mono', monospace;
+  --display: 'Bungee', 'Arial Narrow Bold', sans-serif;
+  --sans:    'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --mono:    'JetBrains Mono', 'Courier New', monospace;
 
-  --ease:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --seam: 7px;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background: var(--black);
-  color: var(--white);
+  background: var(--bone);
+  color: var(--ink);
   font-family: var(--sans);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   overflow-x: hidden;
 }
 
 a { text-decoration: none; color: inherit; }
 
-::selection { background: var(--white); color: var(--black); }
+::selection { background: var(--yellow); color: var(--ink); }
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--bone); }
+::-webkit-scrollbar-thumb { background: var(--ink); border: 3px solid var(--bone); border-radius: 8px; }
+
+:focus-visible {
+  outline: 3px solid var(--red);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
 
 /* ── Shared layout ─────────────────────────────────── */
 .wrapper {
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 7rem 3rem;
+  padding: 6rem 3rem;
 }
 
-/* ── Section label ──────────────────────────────────── */
-.eyebrow {
-  font-family: var(--mono);
-  font-size: 0.65rem;
-  letter-spacing: 0.2em;
-  color: var(--grey-60);
-  text-transform: uppercase;
-  margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-.eyebrow::before {
-  content: '';
-  display: inline-block;
-  width: 24px;
-  height: 1px;
-  background: var(--grey-50);
+.panel { position: relative; }
+.panel-ink    { background: var(--ink);    color: var(--bone); }
+.panel-bone   { background: var(--bone);   color: var(--ink); }
+.panel-yellow { background: var(--yellow); color: var(--ink); }
+.panel-blue   { background: var(--blue);   color: var(--bone); }
+.panel-red    { background: var(--red);    color: var(--bone); }
+.panel-green  { background: var(--green);  color: var(--bone); }
+
+.panel-ink strong, .panel-blue strong { color: #fff; }
+.panel-bone strong, .panel-yellow strong { color: var(--ink); }
+
+/* ── Seam divider: a painted body-panel weld, not a hairline ───── */
+.seam {
+  height: var(--seam);
+  background: var(--ink);
+  background-image: repeating-linear-gradient(
+    90deg, transparent 0 22px, rgba(246,239,223,0.14) 22px 24px
+  );
 }
 
 /* ── Section title ──────────────────────────────────── */
 .heading {
-  font-family: var(--serif);
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  color: var(--pure);
-  margin-bottom: 3rem;
+  font-family: var(--display);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.06;
+  letter-spacing: -0.01em;
+  margin-bottom: 2.75rem;
+  text-wrap: balance;
 }
+.heading em {
+  font-style: normal;
+  display: inline-block;
+}
+.panel-bone .heading em { color: var(--red); }
+.panel-yellow .heading em { color: var(--red-deep); }
+.panel-ink .heading em { color: var(--yellow); }
+.panel-blue .heading em { color: var(--yellow); }
+.panel-green .heading em { color: var(--yellow); }
 
-/* ── Divider ────────────────────────────────────────── */
-.divider {
-  width: 100%;
-  height: 1px;
-  background: var(--grey-20);
-  margin: 0;
+/* ── Route plate: the site's signature badge/chip ───────────────── */
+.plate {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--bone);
+  color: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--ink);
+  padding: 0.6rem 1.1rem;
 }
 
 /* ── Buttons ────────────────────────────────────────── */
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.1em;
-  padding: 0.75rem 1.5rem;
-  border-radius: 2px;
+  gap: 0.6rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 0.9rem 1.6rem;
+  border-radius: 8px;
   cursor: pointer;
-  border: none;
-  transition: all 0.25s var(--ease);
-  text-transform: uppercase;
+  border: 3px solid var(--ink);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  box-shadow: 5px 5px 0 var(--ink);
 }
-.btn-solid {
-  background: var(--white);
-  color: var(--black);
-  font-weight: 500;
-}
-.btn-solid:hover {
-  background: var(--pure);
-  transform: translateY(-2px);
-}
-.btn-outline {
+.btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+.btn:disabled { cursor: not-allowed; opacity: 0.6; transform: none; box-shadow: 5px 5px 0 var(--ink); }
+
+.btn-solid { background: var(--yellow); color: var(--ink); }
+.btn-outline { background: var(--bone); color: var(--ink); }
+.panel-ink .btn-outline, .panel-blue .btn-outline, .panel-red .btn-outline, .panel-green .btn-outline {
   background: transparent;
-  color: var(--grey-80);
-  border: 1px solid var(--grey-30);
+  color: inherit;
+  border-color: currentColor;
+  box-shadow: 5px 5px 0 currentColor;
 }
-.btn-outline:hover {
-  border-color: var(--grey-80);
-  color: var(--white);
-  transform: translateY(-2px);
+.panel-ink .btn-outline:active, .panel-blue .btn-outline:active,
+.panel-red .btn-outline:active, .panel-green .btn-outline:active { box-shadow: 1px 1px 0 currentColor; }
+
+/* ── Entrance (varied per section, not identical everywhere) ───── */
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    opacity: 0;
+    transform: translateY(28px);
+    animation: rise 0.8s var(--ease) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes rise { to { opacity: 1; transform: translateY(0); } }
+
+  .pop {
+    opacity: 0;
+    transform: scale(0.92) rotate(var(--rot, -1deg));
+    animation: pop 0.7s var(--ease) forwards;
+    animation-delay: var(--d, 0ms);
+  }
+  @keyframes pop { to { opacity: 1; transform: scale(1) rotate(var(--rot, -1deg)); } }
 }
 
 @media (max-width: 700px) {
-  .wrapper { padding: 5rem 1.5rem; }
+  .wrapper { padding: 4.5rem 1.5rem; }
 }

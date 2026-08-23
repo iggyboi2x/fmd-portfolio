@@ -18,25 +18,27 @@ export default function Contact() {
       })
       if (res.ok) { setStatus('sent'); setForm({ name: '', email: '', message: '' }) }
       else setStatus('error')
-    } catch (_err) { setStatus('error') }
+    } catch { setStatus('error') }
   }
 
   return (
-    <section id="contact">
-      <div className="divider" />
+    <section id="contact" className="panel panel-ink">
+      <div className="seam" />
       <div className="wrapper contact-wrapper">
 
         <div className="contact-left">
-          <p className="eyebrow">Contact</p>
           <h2 className="heading">Let's build<br />something<br /><em>together.</em></h2>
           <p className="contact-intro">
             Open to freelance projects, internships, or full-time roles.
             Based in Mandaue City, Cebu — available remotely anywhere.
           </p>
-          <a href="mailto:francismigueldiano@gmail.com" className="contact-email">
+
+          <a href="mailto:francismigueldiano@gmail.com" className="contact-email plate">
             francismigueldiano@gmail.com ↗
           </a>
+
           <div className="contact-socials">
+            <a href="tel:+639544081366" className="social-link">+63 954 408 1366</a>
             <a href="https://github.com/iggyboi2x" target="_blank" rel="noreferrer" className="social-link">GitHub ↗</a>
             <a href="https://linkedin.com/in/francis-miguel-diano-091760316" target="_blank" rel="noreferrer" className="social-link">LinkedIn ↗</a>
           </div>
@@ -57,7 +59,7 @@ export default function Contact() {
               <textarea id="message" name="message" rows="5" placeholder="What's on your mind?" value={form.message} onChange={handleChange} required />
             </div>
             <button type="submit" className="btn btn-solid form-btn" disabled={status === 'sending'}>
-              {status === 'sending' ? 'Sending...' : 'Send Message'}
+              {status === 'sending' ? 'Sending…' : 'Send Message'}
             </button>
             {status === 'sent' && <p className="form-feedback success">Message sent! I'll get back to you soon.</p>}
             {status === 'error' && <p className="form-feedback error">Something went wrong. Try emailing me directly.</p>}
