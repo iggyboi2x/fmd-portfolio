@@ -18,8 +18,15 @@
 }
 .about-right p strong { color: var(--ink); font-weight: 700; }
 
-.about-stat {
+.about-stat-row {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
   margin-top: 2.5rem;
+}
+
+.about-stat {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.3rem;
@@ -35,6 +42,55 @@
   font-weight: 700;
   font-size: 0.8rem;
   line-height: 1.3;
+}
+
+/* The gauge — About's own signature, not another dashed line: a dashboard
+   dial idling next to the stat, occasionally revving like an engine
+   catching before it settles again. */
+.gauge {
+  position: relative;
+  flex-shrink: 0;
+  width: 4.5rem; height: 4.5rem;
+  border-radius: 50%;
+  background: var(--bone);
+  border: 3px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.gauge-face {
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  background: repeating-conic-gradient(var(--ink) 0deg 2deg, transparent 2deg 18deg);
+  mask: radial-gradient(circle, transparent 58%, black 60%);
+  -webkit-mask: radial-gradient(circle, transparent 58%, black 60%);
+  opacity: 0.55;
+}
+.gauge-needle {
+  position: absolute;
+  left: 50%; bottom: 50%;
+  width: 2px; height: 30%;
+  background: var(--red);
+  border-radius: 2px;
+  transform-origin: bottom center;
+  transform: translateX(-50%) rotate(-35deg);
+}
+.gauge-needle::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 50%;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--ink);
+  transform: translateX(-50%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gauge-needle { animation: needle-idle 6.5s ease-in-out infinite; }
+}
+@keyframes needle-idle {
+  0%, 55%, 100% { transform: translateX(-50%) rotate(-35deg); }
+  70% { transform: translateX(-50%) rotate(30deg); }
+  80% { transform: translateX(-50%) rotate(-8deg); }
+  88% { transform: translateX(-50%) rotate(18deg); }
 }
 
 @media (max-width: 800px) {

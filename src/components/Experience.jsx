@@ -61,6 +61,7 @@ export default function Experience() {
           </div>
         </div>
       </div>
+      <div className="headlight-sweep" aria-hidden="true" />
     </section>
   )
 }

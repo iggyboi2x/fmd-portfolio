@@ -1,3 +1,26 @@
+#experience { overflow: hidden; }
+
+/* Headlights passing on the road outside — a soft diagonal beam sweeping
+   the panel, like light thrown across a wall as traffic goes by at night. */
+.headlight-sweep {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: -10rem;
+  width: 10rem;
+  background: linear-gradient(100deg,
+    transparent, rgba(246,239,223,0.08) 40%, rgba(246,239,223,0.16) 50%,
+    rgba(246,239,223,0.08) 60%, transparent
+  );
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .headlight-sweep { animation: sweep-across 11s ease-in-out infinite; }
+}
+@keyframes sweep-across {
+  0%, 15%   { transform: translateX(0); }
+  55%, 100% { transform: translateX(calc(100vw + 10rem)); }
+}
+
 .exp-list { display: flex; flex-direction: column; margin-bottom: 4rem; }
 
 .exp-row {

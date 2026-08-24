@@ -23,7 +23,7 @@ Not a student doing tutorial projects — a full-stack engineer who has shipped 
 ## Operating Context
 
 - Site is a single-page React (Vite) app, deployed on Vercel, at francismigueldiano.vercel.app.
-- Sections: Hero, About, Skills (currently built but not mounted in App.jsx — a bug to fix), Projects, Experience/Education/Certifications, Blog (placeholder/"coming soon"), Contact, Footer.
+- Sections: Hero, About, Skills, Projects, Experience/Education/Certifications, Contact, Footer. (A Blog "coming soon" placeholder existed briefly but was removed at the user's request — not currently needed.)
 - Contact form submits to Formspree (`https://formspree.io/f/xnjrrodq`) — keep this integration.
 - All project links are real, live deployments or GitHub repos; no fabricated case studies or metrics.
 

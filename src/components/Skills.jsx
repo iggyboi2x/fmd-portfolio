@@ -18,6 +18,7 @@ const skillGroups = [
 export default function Skills() {
   return (
     <section id="skills" className="panel panel-ink">
+      <div className="seam" />
       <div className="wrapper">
         <h2 className="heading">What I <em>work with.</em></h2>
         <div className="skills-groups">
@@ -28,8 +29,14 @@ export default function Skills() {
                 <span>{group.note}</span>
               </div>
               <div className="skills-items">
-                {group.items.map(item => (
-                  <span className={`skill-pill pill-${group.color}`} key={item}>{item}</span>
+                {group.items.map((item, i) => (
+                  <span
+                    className={`skill-pill pill-${group.color}`}
+                    key={item}
+                    style={{ '--sway-delay': `${(i % 5) * -0.9}s`, '--sway-dur': `${4.5 + (i % 4) * 0.6}s` }}
+                  >
+                    {item}
+                  </span>
                 ))}
               </div>
             </div>

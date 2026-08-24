@@ -49,13 +49,14 @@ craft floor's ban; section identity comes from panel color instead.
 
 ## Components
 
-- **`.panel-*`** — full-bleed section backgrounds (ink/bone/yellow/blue);
-  `.seam` is the thick dashed-rivet divider between panels, standing in for
-  a hairline `<hr>`.
+- **`.panel-*`** — full-bleed section backgrounds (ink/bone/blue; yellow
+  remains a token for accents/plates but no longer backs a full section
+  now that Blog is gone). `.seam` is the thick dashed-rivet divider between
+  panels, standing in for a hairline `<hr>`.
 - **`.plate`** — the core recurring object: bone card, 3px ink border,
   8px radius, hard offset shadow (`5-8px, 8x8 for project plates`). Used for
-  the nav logo badge, hero status pill, about stat, contact email link,
-  blog placeholder, and certification cards. Hard offset shadow is the
+  the nav logo badge, hero status pill, about stat, contact email link, and
+  certification cards. Hard offset shadow is the
   world's depth system (painted panels/stickers sitting proud of metal), not
   a neobrutalist costume borrowed for its own sake.
 - **`.btn`** — same plate language as an interactive element: press-down
@@ -69,13 +70,72 @@ craft floor's ban; section identity comes from panel color instead.
 
 ## Motion
 
-Varied by section rather than one identical fade-up everywhere:
-`.rise` (translateY, hero/about entrances) vs `.pop` (scale + permanent
-rotation, project plates). All entrance motion respects
-`prefers-reduced-motion`. The recurring signature moment is the plate/button
-press: offset shadow collapses toward the ink on `:active`/`:focus` states,
-tying every clickable element back to the "sticker sitting on painted metal"
-premise.
+Two families, both under the same "driving" thesis rather than unrelated
+per-section decoration:
+
+**Entrance (on scroll into view):** `.rise` (translateY, hero/about) vs
+`.pop` (scale + permanent rotation, project plates) — varied by section
+rather than one identical fade-up everywhere.
+
+**Ambient/background (always running, not hover-gated) — one thesis, run
+the length of the page instead of confined to the hero:**
+- **Hero "windshield"** (`Hero.css` `.hero-road`) — a dashed yellow lane
+  line scrolls continuously along the hero floor and two blurred glare
+  blooms drift past at different speeds, like headlight glare passing a
+  windshield while driving. This is the authored focal moment; everything
+  below is a quieter echo of it.
+- **Seam drift** (`index.css` `.seam`) — every section divider's rivet
+  pattern scrolls sideways at the same slow, shared rate, so the page reads
+  as one long body panel scrolling past rather than a fresh weld at each
+  section. Present on every `.seam` site-wide. This and the hero lane above
+  are the only two places the "moving dashed line" material is used — every
+  other section below gets a materially different mechanism, on request,
+  rather than a re-skinned copy of the same line.
+- **About gauge** (`About.css` `.gauge`) — a small dashboard dial sits next
+  to the "5+ projects" stat, its needle idling and occasionally revving
+  (accelerate, overshoot, settle) like an engine catching. Replaced an
+  earlier `.road-echo` that was just the hero's dashed line again — About
+  had no material of its own until this.
+- **Skills charm-sway** (`Skills.css` `.skill-pill`) — every tech-stack pill
+  idles with a slow, staggered rotation, like the charms that hang off a
+  jeepney's rearview mirror. Pauses (`animation: none`) on hover so the
+  deliberate lift transition isn't fighting a live animation for the same
+  property.
+- **Projects exhaust** (`Projects.css` `.exhaust`) — three soft blurred
+  yellow sparks drift upward and fade over the project plates, staggered
+  with negative delays so it reads as a continuous idling engine, not a
+  synced loop. Warm color so it reads against both the bone gaps and the
+  dark plate colors.
+- **Experience headlight sweep** (`Experience.css` `.headlight-sweep`) — a
+  soft diagonal beam crosses the panel roughly once every 11s with a pause
+  at each end, like passing headlights thrown across a wall at night.
+- **Footer taillight** (`Footer.css` `.taillight`) — a small pulsing dot
+  next to the credit line: the last light you see as the jeepney pulls away.
+- **Turn-signal chase** (`Contact.css` `.turn-signal`) — three CSS-drawn
+  chevrons flash in sequence next to the email address, signaling toward
+  the one action the page is closing on. Purposeful attention-direction,
+  not ornament.
+
+Every loop above is wrapped in `@media (prefers-reduced-motion: no-preference)`
+— a reduced-motion visitor gets the static dashed/rivet pattern, steady pill
+rotation, and dim/steady chevrons and dots, with no spatial movement, never
+a blank or missing element.
+
+Implementation note: `.wrapper` (`index.css`) now carries `position: relative`,
+which makes it a stacking participant like any other positioned element. The
+first pass placed each section's decorative absolutely-positioned layer
+(exhaust, sweep, road-echo) *before* `.wrapper` in the DOM, intending it as a
+background — but with `.wrapper` positioned, a positioned sibling that comes
+later in DOM order paints on top regardless of any background-only intent,
+so those layers were rendering behind `.wrapper`'s content and, wherever that
+content is opaque (the project plates, the cert cards), effectively
+invisible. Fixed by rendering each decorative layer *after* `.wrapper` (last
+child of its section) instead, so it reliably paints on top; opacity and
+color were tuned so that still never competes with legibility.
+
+The plate/button press (offset shadow collapses toward the ink on
+`:active`/`:focus`) remains the interactive signature, tying every
+clickable element back to the "sticker sitting on painted metal" premise.
 
 ## Patterns to avoid here
 
@@ -93,4 +153,3 @@ premise.
   pairing. Recommend a quick look in an actual browser (`npm run dev`) at
   desktop and mobile widths before shipping, especially the mobile nav
   dropdown and the Projects section's plate rotation on small screens.
-- Blog section is an honest placeholder, unchanged in substance from before.

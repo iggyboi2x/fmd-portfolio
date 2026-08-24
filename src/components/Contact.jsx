@@ -33,9 +33,14 @@ export default function Contact() {
             Based in Mandaue City, Cebu — available remotely anywhere.
           </p>
 
-          <a href="mailto:francismigueldiano@gmail.com" className="contact-email plate">
-            francismigueldiano@gmail.com ↗
-          </a>
+          <div className="contact-signal-row">
+            <a href="mailto:francismigueldiano@gmail.com" className="contact-email plate">
+              francismigueldiano@gmail.com ↗
+            </a>
+            <span className="turn-signal" aria-hidden="true">
+              <i /><i /><i />
+            </span>
+          </div>
 
           <div className="contact-socials">
             <a href="tel:+639544081366" className="social-link">+63 954 408 1366</a>

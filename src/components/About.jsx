@@ -23,9 +23,15 @@ export default function About() {
             I'm production-ready with <strong>Supabase and SQL</strong>. I care deeply about user
             experience, solid architecture, and shipping work that solves real problems for real clients.
           </p>
-          <div className="about-stat plate">
-            <span className="stat-num">5+</span>
-            <span className="stat-label">Projects shipped<br />to production</span>
+          <div className="about-stat-row">
+            <div className="about-stat plate">
+              <span className="stat-num">5+</span>
+              <span className="stat-label">Projects shipped<br />to production</span>
+            </div>
+            <div className="gauge" aria-hidden="true">
+              <span className="gauge-face" />
+              <span className="gauge-needle" />
+            </div>
           </div>
         </div>
       </div>

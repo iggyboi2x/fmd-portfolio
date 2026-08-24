@@ -25,7 +25,11 @@
   color: #9a9686;
 }
 
-.skills-items { display: flex; flex-wrap: wrap; gap: 0.65rem; }
+.skills-items {
+  display: flex; flex-wrap: wrap; gap: 0.65rem;
+  /* charms need headroom above them to swing without clipping */
+  padding-top: 0.5rem;
+}
 
 .skill-pill {
   font-family: var(--mono);
@@ -36,9 +40,25 @@
   border-radius: 6px;
   color: var(--ink);
   box-shadow: 3px 3px 0 var(--ink);
+  transform-origin: top center;
   transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
 .skill-pill:hover { transform: translate(-2px, -2px); box-shadow: 5px 5px 0 var(--ink); }
+
+/* Rearview-mirror charms — every jeepney has something dangling and
+   swaying up front; the stack tags borrow that same idle motion. Paused
+   on hover so the deliberate lift transition above isn't fighting it. */
+@media (prefers-reduced-motion: no-preference) {
+  .skill-pill {
+    animation: charm-sway var(--sway-dur, 5s) ease-in-out infinite;
+    animation-delay: var(--sway-delay, 0s);
+  }
+  .skill-pill:hover { animation: none; }
+}
+@keyframes charm-sway {
+  0%, 100% { transform: rotate(-2.5deg); }
+  50% { transform: rotate(2.5deg); }
+}
 
 .pill-yellow { background: var(--yellow); }
 .pill-red { background: var(--red-deep); color: var(--bone); border-color: var(--bone); box-shadow: 3px 3px 0 var(--bone); }

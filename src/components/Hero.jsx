@@ -9,6 +9,12 @@ export default function Hero() {
         <span className="bar bar-green" />
       </div>
 
+      <div className="hero-road" aria-hidden="true">
+        <span className="hero-glare glare-a" />
+        <span className="hero-glare glare-b" />
+        <span className="hero-lane" />
+      </div>
+
       <div className="hero-inner">
         <div className="plate hero-status rise" style={{ '--d': '0ms' }}>
           <span className="hero-status-dot" />

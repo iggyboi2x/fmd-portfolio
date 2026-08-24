@@ -18,6 +18,44 @@
 .bar-blue { background: var(--blue); }
 .bar-green { background: var(--green); }
 
+/* ── The windshield: a road running under the name, headlight glare
+   drifting past like oncoming traffic. The one focal, always-on motion
+   moment — everything else on the page is a quieter echo of it. ───── */
+.hero-road {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 15rem;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-glare {
+  position: absolute;
+  bottom: -6rem;
+  width: 17rem; height: 17rem;
+  border-radius: 50%;
+  filter: blur(3.5rem);
+  opacity: 0.28;
+}
+.glare-a { background: var(--yellow); left: -4rem; }
+.glare-b { background: var(--red); left: 45%; opacity: 0.18; width: 14rem; height: 14rem; }
+
+.hero-lane {
+  position: absolute;
+  left: 0; right: 0; bottom: 1.75rem;
+  height: 5px;
+  background-image: repeating-linear-gradient(90deg, var(--yellow) 0 40px, transparent 40px 72px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-lane { animation: lane-scroll 2.6s linear infinite; }
+  .glare-a, .glare-b { will-change: transform; }
+  .glare-a { animation: glare-drift-a 12s ease-in-out infinite; }
+  .glare-b { animation: glare-drift-b 16s ease-in-out infinite; }
+}
+@keyframes lane-scroll { to { background-position: -72px 0; } }
+@keyframes glare-drift-a { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(55vw); } }
+@keyframes glare-drift-b { 0%, 100% { transform: translateX(0); } 50% { transform: translateX(-38vw); } }
+
 .hero-inner {
   position: relative;
   max-width: 1120px;
@@ -97,4 +135,6 @@
   .hero-bars { width: 10vw; min-width: 40px; }
   .hero-scroll { display: none; }
   .hero-bottom { flex-direction: column; align-items: flex-start; }
+  .hero-road { height: 9rem; }
+  .hero-glare { width: 11rem; height: 11rem; }
 }

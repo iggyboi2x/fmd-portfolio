@@ -71,6 +71,9 @@ export default function Projects() {
           ))}
         </div>
       </div>
+      <div className="exhaust" aria-hidden="true">
+        <span /><span /><span />
+      </div>
     </section>
   )
 }

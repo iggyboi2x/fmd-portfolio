@@ -16,6 +16,19 @@
   font-size: 0.75rem;
   color: #9a9686;
 }
+.footer-name { display: inline-flex; align-items: center; gap: 0.55rem; }
+
+/* Taillight — the last thing you see as the jeepney pulls away. */
+.taillight {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red-bright);
+  flex-shrink: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .taillight { animation: taillight-pulse 3s ease-in-out infinite; }
+}
+@keyframes taillight-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.25; } }
 
 @media (max-width: 700px) {
   .footer { padding: 1.5rem; }

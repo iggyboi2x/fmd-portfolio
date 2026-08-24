@@ -79,6 +79,7 @@ a { text-decoration: none; color: inherit; }
 
 /* ── Shared layout ─────────────────────────────────── */
 .wrapper {
+  position: relative;
   max-width: 1120px;
   margin: 0 auto;
   padding: 6rem 3rem;
@@ -102,6 +103,14 @@ a { text-decoration: none; color: inherit; }
   background-image: repeating-linear-gradient(
     90deg, transparent 0 22px, rgba(246,239,223,0.14) 22px 24px
   );
+}
+
+/* Every seam keeps drifting sideways at the same slow rate — the read is
+   that the page is one long body panel scrolling past, not a new weld
+   welded fresh at each section. */
+@media (prefers-reduced-motion: no-preference) {
+  .seam { animation: seam-drift 18s linear infinite; }
+  @keyframes seam-drift { to { background-position: -240px 0; } }
 }
 
 /* ── Section title ──────────────────────────────────── */
