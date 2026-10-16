@@ -21,7 +21,7 @@ export default function Skills() {
     <section id="skills" className="panel panel-ink">
       <div className="seam" />
       <div className="wrapper">
-        <h2 className="heading">What I <em>work with.</em></h2>
+        <h2 className="heading rise">What I <em>work with.</em></h2>
         <Ticker items={skillGroups.flatMap(g => g.items)} />
         <div className="skills-groups">
           {skillGroups.map(group => (

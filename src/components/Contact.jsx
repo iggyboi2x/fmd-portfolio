@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Spotlight from './Spotlight'
 import './Contact.css'
 
 export default function Contact() {
@@ -24,10 +25,11 @@ export default function Contact() {
   return (
     <section id="contact" className="panel panel-ink">
       <div className="seam" />
+      <Spotlight />
       <div className="wrapper contact-wrapper">
 
         <div className="contact-left">
-          <h2 className="heading">Let's build<br />something<br /><em>together.</em></h2>
+          <h2 className="heading rise">Let's build<br />something<br /><em>together.</em></h2>
           <p className="contact-intro">
             Open to freelance projects, internships, or full-time roles.
             Based in Mandaue City, Cebu — available remotely anywhere.

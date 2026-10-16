@@ -28,7 +28,7 @@ export default function Experience() {
     <section id="experience" className="panel panel-blue">
       <div className="seam" />
       <div className="wrapper">
-        <h2 className="heading">Education &amp;<br /><em>certifications.</em></h2>
+        <h2 className="heading rise">Education &amp;<br /><em>certifications.</em></h2>
 
         <div className="exp-list">
           {education.map(e => (

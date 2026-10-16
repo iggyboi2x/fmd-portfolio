@@ -1,9 +1,11 @@
 import RouteBoard from './RouteBoard'
+import Spotlight from './Spotlight'
 import './Hero.css'
 
 export default function Hero() {
   return (
     <section id="hero" className="hero panel panel-ink">
+      <Spotlight />
       <div className="hero-bars" aria-hidden="true">
         <span className="bar bar-red" />
         <span className="bar bar-blue" />

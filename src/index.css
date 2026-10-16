@@ -169,8 +169,26 @@ a { text-decoration: none; color: inherit; }
   border-radius: 8px;
   cursor: pointer;
   border: 3px solid var(--ink);
-  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease), translate 0.3s var(--ease);
   box-shadow: 5px 5px 0 var(--ink);
+  /* Magnetic pull (effects.js) — a separate property, so it composes with
+     the press transform below instead of fighting it. */
+  translate: var(--mag-x, 0px) var(--mag-y, 0px);
+  position: relative;
+  overflow: hidden;
+}
+/* Chrome shine: one sweep across the face on hover, like light catching
+   a polished plate. */
+.btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.5) 48%, transparent 66%);
+  transform: translateX(-130%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .btn:hover::after { transform: translateX(130%); transition: transform 0.75s var(--ease); }
 }
 .btn:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
 .btn:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
@@ -204,6 +222,11 @@ a { text-decoration: none; color: inherit; }
     animation-delay: var(--d, 0ms);
   }
   @keyframes pop { to { opacity: 1; transform: scale(1) rotate(var(--rot, -1deg)); } }
+
+  /* Hold each entrance until it scrolls into view (effects.js). Gated on
+     .reveal-ready so content can never be stuck hidden if the script fails. */
+  .reveal-ready .rise:not(.in-view),
+  .reveal-ready .pop:not(.in-view) { animation-play-state: paused; }
 }
 
 @media (max-width: 700px) {

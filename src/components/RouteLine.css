@@ -1,0 +1,65 @@
+/* Only where the page has a side margin wide enough for the line and its
+   longest label ("Experience") to sit clear of the content column — below
+   1360px it would overlap the 1120px wrapper's left edge. */
+.route-line { display: none; }
+
+@media (min-width: 1360px) {
+  .route-line {
+    display: block;
+    position: fixed;
+    z-index: 90;
+    left: 1.4rem;
+    top: 22vh;
+    bottom: 22vh;
+    width: 6px;
+    background: var(--bone);
+    border: 2px solid var(--ink);
+    border-radius: 6px;
+    pointer-events: none;
+  }
+}
+
+.route-line-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--yellow);
+  border-radius: 4px;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+
+.route-stop {
+  position: absolute;
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--bone);
+  border: 3px solid var(--ink);
+  transform: translate(-50%, -50%);
+  transition: background 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.route-stop.is-reached { background: var(--yellow); }
+.route-stop.is-active { background: var(--red); transform: translate(-50%, -50%) scale(1.25); }
+
+.route-stop-label {
+  position: absolute;
+  left: calc(100% + 0.6rem);
+  top: 50%;
+  transform: translate(-0.4rem, -50%);
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: var(--bone);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--ink);
+  padding: 0.15rem 0.4rem;
+  opacity: 0;
+  transition: opacity 0.25s var(--ease), transform 0.25s var(--ease);
+}
+.route-stop.is-active .route-stop-label { opacity: 1; transform: translate(0, -50%); }

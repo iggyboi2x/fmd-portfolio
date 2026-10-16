@@ -86,6 +86,16 @@
 @media (prefers-reduced-motion: no-preference) {
   .gauge-needle { animation: needle-idle 6.5s ease-in-out infinite; }
 }
+/* The stat counting up floors the throttle: a full sweep, overshoot, settle. */
+@media (prefers-reduced-motion: no-preference) {
+  .gauge.is-revving .gauge-needle { animation: needle-rev 1.4s var(--ease) 1; }
+}
+@keyframes needle-rev {
+  0%   { transform: translateX(-50%) rotate(-35deg); }
+  45%  { transform: translateX(-50%) rotate(118deg); }
+  65%  { transform: translateX(-50%) rotate(96deg); }
+  100% { transform: translateX(-50%) rotate(-35deg); }
+}
 @keyframes needle-idle {
   0%, 55%, 100% { transform: translateX(-50%) rotate(-35deg); }
   70% { transform: translateX(-50%) rotate(30deg); }

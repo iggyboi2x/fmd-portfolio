@@ -109,13 +109,13 @@ export default function Projects() {
     <section id="projects" className="panel panel-bone">
       <div className="seam" />
       <div className="wrapper">
-        <h2 className="heading">Developed <em>works.</em></h2>
+        <h2 className="heading rise">Developed <em>works.</em></h2>
         <div className="projects-list">
           {projects.map((p, i) => (
             <Tilt key={p.title}>
               <article
                 className={`project-plate plate-${p.color} pop${p.media ? ' has-media' : ''}${i % 2 ? ' media-left' : ''}`}
-                style={{ '--d': `${i * 60}ms`, '--rot': i % 2 === 0 ? '-0.6deg' : '0.6deg' }}
+                style={{ '--rot': i % 2 === 0 ? '-0.6deg' : '0.6deg' }}
               >
                 <span className="plate-glare" aria-hidden="true" />
                 <div className="project-body">

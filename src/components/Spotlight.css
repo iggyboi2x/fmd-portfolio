@@ -1,0 +1,14 @@
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.45s var(--ease);
+  /* Rivet grid + warm beam, both cut to a soft circle around the cursor. */
+  background:
+    radial-gradient(circle, rgba(246, 239, 223, 0.32) 1.6px, transparent 2.2px) 0 0 / 22px 22px,
+    radial-gradient(340px circle at var(--sx, 50%) var(--sy, 50%), rgba(245, 179, 36, 0.14), transparent 70%);
+  -webkit-mask-image: radial-gradient(300px circle at var(--sx, 50%) var(--sy, 50%), #000 20%, transparent 75%);
+  mask-image: radial-gradient(300px circle at var(--sx, 50%) var(--sy, 50%), #000 20%, transparent 75%);
+}
+.spotlight.is-lit { opacity: 1; }
