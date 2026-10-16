@@ -59,6 +59,31 @@ craft floor's ban; section identity comes from panel color instead.
   certification cards. Hard offset shadow is the
   world's depth system (painted panels/stickers sitting proud of metal), not
   a neobrutalist costume borrowed for its own sake.
+- **Route board** (`RouteBoard.jsx/.css`) — a split-flap destination sign
+  under the hero name, cycling FULL-STACK → MOBILE APPS → AI FEATURES →
+  REAL-TIME → CLIENT SITES. Each flap only advances forward through the
+  alphabet one step per tick, like a real mechanical board, so words settle
+  cell by cell. The hinge line sits behind the glyph (a hyphen otherwise
+  reads as "="). Flaps are `aria-hidden`; a `.sr-only` sentence carries the
+  meaning. Pauses while off-screen or in a hidden tab.
+- **LED ticker** (`Ticker.jsx/.css`) — a dot-matrix signboard above the
+  skill groups scrolling the full stack. The "LEDs" are a radial-gradient
+  grille laid over glowing Bungee text. Decorative duplicate of the pills
+  below, so the whole board is `aria-hidden`; the list renders twice so a
+  `-50%` scroll loops seamlessly. Pauses on hover.
+- **Project media** (`Projects.jsx` `ProjectMedia`) — each plate with a live
+  site shows a real screenshot (`src/assets/projects/*.webp`, captured at
+  1280×800 and cropped to 1280×620) inside a plate-style browser frame with
+  livery-colored dots and the real host in the URL pill; Nutrio shows two of
+  its actual app screens fanned in phone frames. Media alternates sides
+  (`.media-left`) and stacks under the copy below 900px. The voting system
+  has no public deployment or images, so it stays text-only — never a
+  fabricated preview.
+- **Cursor tilt + glare** (`Tilt.jsx`, `Projects.css` `.tilt`) — plates lean
+  toward the pointer (max 5°/4°) with a soft chrome glare following it. The
+  tilt lives on a wrapper because `.pop` owns the plate's own `transform`;
+  the wrapper has *no* transform at rest so resting text stays crisp 2D.
+  Only on fine-pointer hover devices without reduced motion.
 - **`.btn`** — same plate language as an interactive element: press-down
   motion (shadow collapses toward the ink on `:active`) is the signature
   micro-interaction, repeated everywhere something is clickable.
@@ -145,11 +170,18 @@ clickable element back to the "sticker sitting on painted metal" premise.
 - Bright red/green tokens never carry body or label text — see Color.
 - Mono font stays scoped to tech-stack tags and metadata, not general labels.
 
+## Sharing and assets
+
+- Link previews use `public/og-image.png` (1200×630), rendered from
+  `scripts/og-image.html` — the regenerate command is in that file's header.
+- `public/Diano_FrancisMiguel_Resume.pdf` is served from the hero CTA and the
+  contact links. Replace the file whenever the résumé changes; the URL stays.
+- Project screenshots are static captures of the live sites. Re-capture when
+  a client site's homepage changes noticeably.
+
 ## Known gaps / next steps
 
-- No visual QA screenshots were captured this session (no browser/screenshot
-  tool available); verification was build + lint + the mechanical detector
-  (`detect.mjs`, clean) + a manual WCAG contrast pass on every panel/text
-  pairing. Recommend a quick look in an actual browser (`npm run dev`) at
-  desktop and mobile widths before shipping, especially the mobile nav
-  dropdown and the Projects section's plate rotation on small screens.
+- Browser QA (Oct 2026): desktop, 320–1280px widths and reduced motion were
+  driven in real Chrome via Playwright — no horizontal scroll at any width,
+  all images load, tilt/board/ticker behave and switch off under reduced
+  motion. Touch devices get no tilt by design.

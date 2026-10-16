@@ -1,0 +1,62 @@
+.ticker {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+  padding: 0.85rem 0;
+  background: #0b0b08;
+  border: 3px solid var(--chrome-lo);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 #000, inset 0 0 0 3px #000;
+}
+
+/* The dot-matrix grille: a grid of round holes laid over the glowing text,
+   so letters read as lit LEDs rather than smooth type. */
+.ticker::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at center, transparent 1.45px, rgba(11, 11, 8, 0.85) 1.9px);
+  background-size: 4px 4px;
+}
+
+.ticker-track {
+  display: flex;
+  width: max-content;
+}
+.ticker-run {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.ticker-item {
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3.6vw, 2.3rem);
+  line-height: 1.2;
+  white-space: nowrap;
+  color: var(--yellow);
+  text-shadow: 0 0 6px rgba(245, 179, 36, 0.85), 0 0 18px rgba(245, 179, 36, 0.45);
+  padding-right: 1.6em;
+}
+.ticker-item:nth-child(3n + 2) {
+  color: var(--red-bright);
+  text-shadow: 0 0 6px rgba(255, 90, 61, 0.85), 0 0 18px rgba(255, 90, 61, 0.4);
+}
+.ticker-item::after {
+  content: '◆';
+  margin-left: 1.6em;
+  font-size: 0.55em;
+  vertical-align: middle;
+  color: var(--chrome-lo);
+  text-shadow: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .ticker-track { animation: ticker-scroll 48s linear infinite; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+}
+@keyframes ticker-scroll { to { transform: translateX(-50%); } }
+
+@media (max-width: 700px) {
+  .ticker { margin-bottom: 2.5rem; }
+}

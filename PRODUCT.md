@@ -30,7 +30,7 @@ Not a student doing tutorial projects — a full-stack engineer who has shipped 
 ## Capabilities and Constraints
 
 - Stack: React 19 + Vite, plain CSS per component (no CSS framework currently in use), no TypeScript, no design system dependency.
-- Content must reflect the latest resume (dated 2026): 4th-year BSIT student (previous site copy said 3rd year — must update), Academic Scholar (previous copy said "Dean's Lister" — verify/update wording), Anthropic Claude 101 certified (missing from current Experience/Certifications section — must add), five named projects: StringGuard, Marina Seaview, BST Sweetbakes, Freesoul, UCLM CCS PSITS-Voting System.
+- Content must reflect the latest resume (dated 2026): 4th-year BSIT student (previous site copy said 3rd year — must update), Academic Scholar (previous copy said "Dean's Lister" — verify/update wording), Anthropic Claude 101 certified (missing from current Experience/Certifications section — must add), named projects: StringGuard, Marina Seaview, BST Sweetbakes, Freesoul, UCLM CCS PSITS-Voting System, plus Nutrio (team-built AI meal planning / food-waste app) and ChatUrMate (random + invite-code video chat), added Oct 2026.
 - Resume tech-stack framing: Strong/production-ready = React.js, Next.js, Tailwind CSS, Supabase, Vite, SQL. Experienced = PHP, Laravel, Node.js, Figma, Git/GitHub, Vercel, custom domains, SEO optimization. This differs slightly from the current Skills.jsx groupings (e.g. current code lists PostgreSQL/MySQL and omits Next.js/SQL as a category) — reconcile toward the resume as the source of truth.
 - No headshot/photo will be used — keep the site photo-free per explicit decision.
 - Do not fabricate testimonials, client names beyond what's already named (Marina Seaview, BST Sweetbakes, Freesoul, UCLM CCS), metrics, or press.
@@ -38,7 +38,7 @@ Not a student doing tutorial projects — a full-stack engineer who has shipped 
 ## Evidence on Hand
 
 - Resume PDF (provided by user, dated 2026) is the authoritative source for current role, education year, certifications, and project list/descriptions.
-- Live project URLs: stringguard.online (resume) — note current site code links to stringguard.vercel.app, needs reconciling — marina-seaview.vercel.app, bst-sweetbakes.vercel.app, freesoul-ph.vercel.app, github.com/ire-zepelli/voting-system.
+- Live project URLs: stringguard.online (resume) — note current site code links to stringguard.vercel.app, needs reconciling — marina-seaview.vercel.app, bst-sweetbakes.vercel.app, freesoul-ph.vercel.app, github.com/ire-zepelli/voting-system, nutrioapp.vercel.app (Nutrio landing + APK download; note nutrio.vercel.app is an unrelated site), chaturmate.vercel.app. Nutrio and ChatUrMate repos are private, so no GitHub links.
 - Contact: francismigueldiano@gmail.com, +63 954 408 1366, Mandaue City, Cebu, Philippines. LinkedIn: linkedin.com/in/francis-miguel-diano-091760316. GitHub handle used on current site: github.com/iggyboi2x.
 - Claude 101 certificate: https://verify.skilljar.com/c/3yczqc6p63w3
 

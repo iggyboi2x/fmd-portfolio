@@ -104,6 +104,102 @@
   background: rgba(0,0,0,0.12);
 }
 
+/* ── Cursor tilt + chrome glare ─────────────────────────────────────
+   Tilt.jsx sets --rx/--ry/--gx/--gy on the wrapper; the card inside keeps
+   its own entrance animation and resting tilt untouched. */
+/* At rest the wrapper has no transform at all, so resting cards keep crisp
+   2D text; the 3D layer only exists while the pointer is over a card. */
+.tilt { transition: transform 0.6s var(--ease); }
+.tilt.is-tilting {
+  transform: perspective(1400px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform 0.12s linear;
+}
+
+.project-plate { position: relative; overflow: hidden; }
+.plate-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  background: radial-gradient(520px circle at var(--gx, 50%) var(--gy, 50%), rgba(255, 255, 255, 0.2), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+}
+.tilt.is-tilting .plate-glare { opacity: 1; }
+
+/* ── Screenshot beside the copy ─────────────────────────────────── */
+.project-plate.has-media {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 2.25rem;
+  align-items: center;
+}
+.media-left .project-media { order: -1; }
+.project-media { margin: 0; }
+.project-media img { display: block; width: 100%; height: auto; }
+
+.browser-frame {
+  background: var(--bone);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--ink);
+  overflow: hidden;
+}
+.browser-bar {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.6rem;
+  border-bottom: 3px solid var(--ink);
+  background: var(--bone-dim);
+}
+.browser-dot {
+  width: 0.65rem; height: 0.65rem;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  flex-shrink: 0;
+}
+.dot-red { background: var(--red); }
+.dot-yellow { background: var(--yellow); }
+.dot-green { background: var(--green); }
+.browser-url {
+  margin-left: 0.4rem;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink);
+  background: var(--bone);
+  border: 2px solid var(--ink);
+  border-radius: 4px;
+  padding: 0.1rem 0.5rem;
+}
+
+.phone-stack {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0 1.5rem;
+}
+.phone {
+  width: min(44%, 190px);
+  padding: 6px;
+  background: var(--ink);
+  border: 3px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 var(--ink);
+}
+.phone img { border-radius: 17px; }
+.phone:first-child { transform: rotate(-4deg); }
+.phone + .phone { margin-left: -8%; transform: rotate(5deg) translateY(1.5rem); }
+
+@media (max-width: 900px) {
+  .project-plate.has-media { grid-template-columns: minmax(0, 1fr); gap: 1.75rem; }
+  .media-left .project-media { order: 0; }
+}
+
 @media (max-width: 700px) {
   .project-plate { padding: 1.5rem; }
 }

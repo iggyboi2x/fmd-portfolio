@@ -1,3 +1,4 @@
+import RouteBoard from './RouteBoard'
 import './Hero.css'
 
 export default function Hero() {
@@ -26,8 +27,12 @@ export default function Hero() {
           <span className="rise hero-name-accent" style={{ '--d': '220ms' }}>MIGUEL.</span>
         </h1>
 
+        <div className="rise" style={{ '--d': '300ms' }}>
+          <RouteBoard />
+        </div>
+
         <div className="hero-bottom">
-          <p className="hero-sub rise" style={{ '--d': '340ms' }}>
+          <p className="hero-sub rise" style={{ '--d': '380ms' }}>
             Full-stack engineer &amp; 4th-year BSIT student in Cebu, PH — I build and
             ship real products, from client reservation sites to a live campus
             election system.
@@ -35,6 +40,7 @@ export default function Hero() {
           <div className="hero-ctas rise" style={{ '--d': '440ms' }}>
             <a href="#projects" className="btn btn-solid">View Projects</a>
             <a href="#contact" className="btn btn-outline">Get In Touch</a>
+            <a href="/Diano_FrancisMiguel_Resume.pdf" target="_blank" rel="noreferrer" className="btn btn-outline">Résumé ↓</a>
           </div>
         </div>
       </div>

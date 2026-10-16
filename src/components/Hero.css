@@ -87,7 +87,7 @@
   line-height: 0.98;
   letter-spacing: -0.01em;
   color: var(--bone);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   display: flex;
   flex-direction: column;
 }

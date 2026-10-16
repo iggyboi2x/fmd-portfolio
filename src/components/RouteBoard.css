@@ -1,0 +1,72 @@
+.route-board {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  padding: 0.6rem 0.75rem 0.6rem 0.9rem;
+  background: var(--ink-soft);
+  border: 3px solid var(--chrome-lo);
+  border-radius: 10px;
+  box-shadow: 5px 5px 0 #000, inset 0 2px 0 rgba(255, 255, 255, 0.08);
+}
+
+.route-label {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--chrome-lo);
+}
+
+.flaps {
+  display: flex;
+  gap: 3px;
+  font-family: var(--display);
+  font-size: clamp(1rem, 4.2vw, 1.75rem);
+  line-height: 1;
+  perspective: 400px;
+}
+
+/* One flap: darker lower leaf, a hinge line through the middle. */
+.flap {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 1.08em;
+  height: 1.45em;
+  border-radius: 4px;
+  background: linear-gradient(#1d1c16 0 50%, #16150f 50% 100%);
+  color: var(--yellow);
+  overflow: hidden;
+}
+/* The hinge sits behind the character so it never splits a hyphen into "=". */
+.flap::after {
+  content: '';
+  position: absolute;
+  z-index: 0;
+  left: 0; right: 0; top: 50%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.flap-char {
+  position: relative;
+  z-index: 1;
+  display: block;
+  white-space: pre;
+  transform-origin: 50% 50%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .flap-char { animation: flap-turn 0.09s ease-out; }
+}
+@keyframes flap-turn {
+  from { transform: rotateX(-75deg); opacity: 0.35; }
+  to   { transform: rotateX(0); opacity: 1; }
+}
+
+@media (max-width: 700px) {
+  .route-board { gap: 0.6rem; margin-bottom: 2rem; }
+}

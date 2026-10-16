@@ -35,7 +35,7 @@ export default function Contact() {
 
           <div className="contact-signal-row">
             <a href="mailto:francismigueldiano@gmail.com" className="contact-email plate">
-              francismigueldiano@gmail.com ↗
+              francismigueldiano<wbr />@gmail.com&nbsp;↗
             </a>
             <span className="turn-signal" aria-hidden="true">
               <i /><i /><i />
@@ -46,6 +46,7 @@ export default function Contact() {
             <a href="tel:+639544081366" className="social-link">+63 954 408 1366</a>
             <a href="https://github.com/iggyboi2x" target="_blank" rel="noreferrer" className="social-link">GitHub ↗</a>
             <a href="https://linkedin.com/in/francis-miguel-diano-091760316" target="_blank" rel="noreferrer" className="social-link">LinkedIn ↗</a>
+            <a href="/Diano_FrancisMiguel_Resume.pdf" target="_blank" rel="noreferrer" className="social-link">Résumé (PDF) ↗</a>
           </div>
         </div>
 

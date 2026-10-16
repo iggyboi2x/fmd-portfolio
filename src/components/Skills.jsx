@@ -1,3 +1,4 @@
+import Ticker from './Ticker'
 import './Skills.css'
 
 const skillGroups = [
@@ -11,7 +12,7 @@ const skillGroups = [
     title: 'Experienced',
     note: 'Comfortable shipping with',
     color: 'red',
-    items: ['PHP', 'Laravel', 'Node.js', 'Figma', 'Git / GitHub', 'Vercel', 'Custom Domains', 'SEO Optimization'],
+    items: ['TypeScript', 'React Native', 'Node.js', 'Express', 'PHP', 'Laravel', 'LiveKit (WebRTC)', 'Claude API', 'Figma', 'Git / GitHub', 'Vercel', 'Custom Domains', 'SEO Optimization'],
   },
 ]
 
@@ -21,6 +22,7 @@ export default function Skills() {
       <div className="seam" />
       <div className="wrapper">
         <h2 className="heading">What I <em>work with.</em></h2>
+        <Ticker items={skillGroups.flatMap(g => g.items)} />
         <div className="skills-groups">
           {skillGroups.map(group => (
             <div className="skills-group" key={group.title}>

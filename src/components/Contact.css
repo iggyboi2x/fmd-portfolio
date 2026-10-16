@@ -45,7 +45,11 @@
 
 .contact-email {
   font-family: var(--display);
-  font-size: 1.05rem;
+  /* The address is one unbreakable word in a wide face: scale it down on
+     phones so it never pushes the page wider than the screen. */
+  font-size: clamp(0.8rem, 3.75vw, 1.05rem);
+  max-width: 100%;
+  overflow-wrap: anywhere;
   background: var(--yellow);
   color: var(--ink);
   transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
