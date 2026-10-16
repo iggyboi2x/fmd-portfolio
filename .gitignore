@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Development-phase notes (kept locally, not published)
+PRODUCT.md
+DESIGN.md
