@@ -17,10 +17,7 @@ const education = [
 
 const certifications = [
   { title: 'Claude 101', issuer: 'Anthropic', color: 'yellow', link: 'https://verify.skilljar.com/c/3yczqc6p63w3' },
-  { title: 'Academic Scholar', issuer: 'UC Lapu-Lapu and Mandaue', color: 'bone' },
-  { title: 'Networking Essentials', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
-  { title: 'Get Connected', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
-  { title: 'Introduction to Cybersecurity', issuer: 'Cisco Networking Academy', meta: '2023', color: 'bone' },
+  { title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', color: 'bone' },
 ]
 
 export default function Experience() {

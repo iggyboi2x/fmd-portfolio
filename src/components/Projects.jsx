@@ -10,6 +10,30 @@ import './Projects.css'
 
 const projects = [
   {
+    title: 'Nutrio',
+    color: 'blue',
+    desc: 'Built with my team — an AI-powered meal planning and food-waste reduction system. An Android app tracks pantry inventory through photo and barcode scanning, plans meals around ingredients nearing expiry, and routes surplus food to donations and barangay waste programs, backed by an admin dashboard and a barangay portal with Excel and PDF reporting.',
+    stack: ['React Native', 'Expo', 'Express', 'Supabase', 'React', 'Claude API', 'Gemini'],
+    demo: 'https://nutrioapp.vercel.app/',
+    repo: null,
+    media: {
+      type: 'phones',
+      screens: [
+        { src: nutrioPantry, alt: 'Nutrio app screen: track what is in your pantry' },
+        { src: nutrioMeals, alt: 'Nutrio app screen: smart meals from what you have' },
+      ],
+    },
+  },
+  {
+    title: 'StringGuard',
+    color: 'yellow',
+    desc: 'A privacy-focused text storage app with client-side encryption — password-protected workspaces using bcryptjs and PBKDF2 key derivation, a Tiptap rich-text editor, and a CodeMirror code editor supporting 15+ languages. Multi-tab, auto-saving, fully responsive.',
+    stack: ['React', 'Vite', 'Supabase', 'Tiptap', 'CodeMirror', 'bcryptjs'],
+    demo: 'https://stringguard.online/',
+    repo: null,
+    media: { type: 'browser', src: stringguardShot, alt: 'StringGuard secure notepad start screen' },
+  },
+  {
     title: 'Freesoul Cyber Gadgets',
     color: 'red',
     desc: 'Built with my dev team — a full-stack business website for a device repair shop featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
@@ -36,15 +60,6 @@ const projects = [
     media: { type: 'browser', src: marinaShot, alt: 'Marina Seaview homepage' },
   },
   {
-    title: 'StringGuard',
-    color: 'yellow',
-    desc: 'A privacy-focused text storage app with client-side encryption — password-protected workspaces using bcryptjs and PBKDF2 key derivation, a Tiptap rich-text editor, and a CodeMirror code editor supporting 15+ languages. Multi-tab, auto-saving, fully responsive.',
-    stack: ['React', 'Vite', 'Supabase', 'Tiptap', 'CodeMirror', 'bcryptjs'],
-    demo: 'https://stringguard.online/',
-    repo: null,
-    media: { type: 'browser', src: stringguardShot, alt: 'StringGuard secure notepad start screen' },
-  },
-  {
     title: 'BST Sweetbakes',
     color: 'red',
     desc: 'Designed and developed an inquiry system for a local bakery, letting customers browse offerings and send order inquiries directly to the business via Messenger.',
@@ -52,21 +67,6 @@ const projects = [
     demo: 'https://bst-sweetbakes.vercel.app/',
     repo: null,
     media: { type: 'browser', src: sweetbakesShot, alt: 'BST Sweetbakes homepage' },
-  },
-  {
-    title: 'Nutrio',
-    color: 'blue',
-    desc: 'Built with my team — an AI-powered meal planning and food-waste reduction system. An Android app tracks pantry inventory through photo and barcode scanning, plans meals around ingredients nearing expiry, and routes surplus food to donations and barangay waste programs, backed by an admin dashboard and a barangay portal with Excel and PDF reporting.',
-    stack: ['React Native', 'Expo', 'Express', 'Supabase', 'React', 'Claude API', 'Gemini'],
-    demo: 'https://nutrioapp.vercel.app/',
-    repo: null,
-    media: {
-      type: 'phones',
-      screens: [
-        { src: nutrioPantry, alt: 'Nutrio app screen: track what is in your pantry' },
-        { src: nutrioMeals, alt: 'Nutrio app screen: smart meals from what you have' },
-      ],
-    },
   },
   {
     title: 'ChatUrMate',
