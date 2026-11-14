@@ -36,7 +36,7 @@ export default function Hero() {
         <div className="hero-bottom">
           <p className="hero-sub rise" style={{ '--d': '380ms' }}>
             Full-stack engineer &amp; 4th-year BSIT student in Cebu, PH — I build and
-            ship real products, from client reservation sites to a live campus
+            ship real products, from an AI meal-planning app to a live campus
             election system.
           </p>
           <div className="hero-ctas rise" style={{ '--d': '440ms' }}>

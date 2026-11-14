@@ -36,7 +36,7 @@ const projects = [
   {
     title: 'Freesoul Cyber Gadgets',
     color: 'red',
-    desc: 'Built with my dev team — a full-stack business website for a device repair shop featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
+    desc: 'Built with my dev team — a concept full-stack business website modeled on a local device repair shop, featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Three.js', 'Resend'],
     demo: 'https://freesoul-ph.vercel.app/',
     repo: null,
@@ -53,7 +53,7 @@ const projects = [
   {
     title: 'Marina Seaview',
     color: 'green',
-    desc: 'Designed and developed an inquiry reservation system for a thriving local events venue in Lapu-Lapu, with a gallery, menu showcase, and a smart reservation form that pre-fills straight into Google Forms.',
+    desc: 'A concept reservation site modeled on a local events venue in Lapu-Lapu, with a gallery, menu showcase, and a smart reservation form that pre-fills straight into Google Forms.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     demo: 'https://marina-seaview.vercel.app/',
     repo: null,
@@ -62,7 +62,7 @@ const projects = [
   {
     title: 'BST Sweetbakes',
     color: 'red',
-    desc: 'Designed and developed an inquiry system for a local bakery, letting customers browse offerings and send order inquiries directly to the business via Messenger.',
+    desc: 'A concept inquiry site modeled on a local bakery, letting customers browse offerings and send order inquiries straight to Messenger.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     demo: 'https://bst-sweetbakes.vercel.app/',
     repo: null,

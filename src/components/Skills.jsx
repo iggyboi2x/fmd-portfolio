@@ -4,7 +4,7 @@ import './Skills.css'
 const skillGroups = [
   {
     title: 'Production-ready',
-    note: 'What I build client work with',
+    note: 'What I build production work with',
     color: 'yellow',
     items: ['React.js', 'Next.js', 'Tailwind CSS', 'Supabase', 'Vite', 'SQL'],
   },

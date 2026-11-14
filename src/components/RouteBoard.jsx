@@ -6,7 +6,7 @@ import './RouteBoard.css'
 // exactly like a real mechanical board — so a long jump (A → Z) visibly
 // takes longer than a short one, and the word settles cell by cell.
 const CHARS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ-'
-const WORDS = ['FULL-STACK', 'MOBILE APPS', 'AI FEATURES', 'REAL-TIME', 'CLIENT SITES']
+const WORDS = ['FULL-STACK', 'MOBILE APPS', 'AI FEATURES', 'REAL-TIME', 'WEB LAUNCHES']
 const WIDTH = Math.max(...WORDS.map(w => w.length))
 const STEP_MS = 45
 const HOLD_MS = 2800
@@ -67,7 +67,7 @@ export default function RouteBoard() {
   return (
     <div className="route-board" ref={boardRef}>
       <span className="route-label" aria-hidden="true">Route</span>
-      <p className="sr-only">I build full-stack web apps, mobile apps, AI features, real-time systems and client sites.</p>
+      <p className="sr-only">I build full-stack web apps, mobile apps, AI features, real-time systems and full web launches.</p>
       <div className="flaps" aria-hidden="true">
         {cells.map((c, i) => (
           <span className="flap" key={i}>

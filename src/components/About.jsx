@@ -54,13 +54,13 @@ export default function About() {
           </p>
           <p>
             I thrive at the intersection of design and functionality — spending my time engineering
-            projects that challenge my understanding of modern tech stacks. From reservation systems
+            projects that challenge my understanding of modern tech stacks. From AI meal planning
             to real-time voting platforms, I build things that actually get used.
           </p>
           <p>
             My frontend focus is strong across <strong>React, Next.js, and Tailwind CSS</strong>, and
             I'm production-ready with <strong>Supabase and SQL</strong>. I care deeply about user
-            experience, solid architecture, and shipping work that solves real problems for real clients.
+            experience, solid architecture, and shipping work that solves real problems for real people.
           </p>
           <div className="about-stat-row" ref={statRef}>
             <div className="about-stat plate">
