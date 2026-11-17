@@ -18,6 +18,9 @@ const education = [
 const certifications = [
   { title: 'Claude 101', issuer: 'Anthropic', color: 'yellow', link: 'https://verify.skilljar.com/c/3yczqc6p63w3' },
   { title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', color: 'bone' },
+  { title: 'Build with IBM Bob: From Ideas to Intelligent Solutions', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
+  { title: 'Planning a Website for a Small Business with IBM Bob', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
+  { title: 'How IBM Bob and AI Tools Are Changing the Way Solutions Are Built', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
 ]
 
 export default function Experience() {
