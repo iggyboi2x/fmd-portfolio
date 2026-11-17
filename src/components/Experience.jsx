@@ -22,27 +22,28 @@ const education = [
   },
 ]
 
+// Accent = issuer, so the color says who issued it, never that one matters more.
 const certifications = [
   {
-    title: 'Claude 101', issuer: 'Anthropic', color: 'yellow',
+    title: 'Claude 101', issuer: 'Anthropic', accent: 'red',
     pdf: '/certs/claude-101.pdf', preview: claudePreview, size: [1552, 1188],
     note: 'Verify at verify.skilljar.com/c/3yczqc6p63w3',
   },
   {
-    title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', color: 'bone',
+    title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', accent: 'blue',
     pdf: '/certs/topcit-level-3.pdf', preview: topcitPreview, size: [1105, 1539],
     note: 'Date of birth, photo and verification barcodes removed for privacy.',
   },
   {
-    title: 'Build with IBM Bob: From Ideas to Intelligent Solutions', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    title: 'Build with IBM Bob: From Ideas to Intelligent Solutions', issuer: 'IBM SkillsBuild', meta: '2026', accent: 'green',
     pdf: '/certs/ibm-bob-ideas-to-intelligent-solutions.pdf', preview: ibmIdeasPreview, size: [1532, 957],
   },
   {
-    title: 'Planning a Website for a Small Business with IBM Bob', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    title: 'Planning a Website for a Small Business with IBM Bob', issuer: 'IBM SkillsBuild', meta: '2026', accent: 'green',
     pdf: '/certs/ibm-bob-small-business-website.pdf', preview: ibmWebsitePreview, size: [1532, 957],
   },
   {
-    title: 'How IBM Bob and AI Tools Are Changing the Way Solutions Are Built', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    title: 'How IBM Bob and AI Tools Are Changing the Way Solutions Are Built', issuer: 'IBM SkillsBuild', meta: '2026', accent: 'green',
     pdf: '/certs/ibm-bob-ai-tools-changing-solutions.pdf', preview: ibmToolsPreview, size: [1532, 957],
   },
 ]
@@ -74,14 +75,20 @@ export default function Experience() {
             {certifications.map(c => (
               <button
                 type="button"
-                className={`cert-plate cert-${c.color} cert-viewable`}
+                className={`cert-card accent-${c.accent}`}
                 key={c.title}
                 onClick={() => setOpenCert(c)}
                 aria-haspopup="dialog"
               >
-                <span className="cert-title">{c.title}</span>
-                <span className="cert-meta">{c.issuer}{c.meta ? ` · ${c.meta}` : ''}</span>
-                <span className="cert-view">View certificate</span>
+                <span className="cert-thumb">
+                  <img src={c.preview} alt="" width={c.size[0]} height={c.size[1]} loading="lazy" decoding="async" />
+                </span>
+                <span className="cert-body">
+                  <span className="cert-issuer">{c.issuer}</span>
+                  <span className="cert-title">{c.title}</span>
+                  {c.meta && <span className="cert-meta">{c.meta}</span>}
+                  <span className="cert-view">View certificate →</span>
+                </span>
               </button>
             ))}
           </div>
