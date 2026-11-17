@@ -1,3 +1,9 @@
+import { useState } from 'react'
+import CertDialog from './CertDialog'
+import topcitPreview from '../assets/certs/topcit-level-3.webp'
+import ibmIdeasPreview from '../assets/certs/ibm-bob-ideas-to-intelligent-solutions.webp'
+import ibmWebsitePreview from '../assets/certs/ibm-bob-small-business-website.webp'
+import ibmToolsPreview from '../assets/certs/ibm-bob-ai-tools-changing-solutions.webp'
 import './Experience.css'
 
 const education = [
@@ -17,13 +23,28 @@ const education = [
 
 const certifications = [
   { title: 'Claude 101', issuer: 'Anthropic', color: 'yellow', link: 'https://verify.skilljar.com/c/3yczqc6p63w3' },
-  { title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', color: 'bone' },
-  { title: 'Build with IBM Bob: From Ideas to Intelligent Solutions', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
-  { title: 'Planning a Website for a Small Business with IBM Bob', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
-  { title: 'How IBM Bob and AI Tools Are Changing the Way Solutions Are Built', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone' },
+  {
+    title: 'TOPCIT Level 3', issuer: 'IITP', meta: '2026', color: 'bone',
+    pdf: '/certs/topcit-level-3.pdf', preview: topcitPreview, size: [1105, 1539], portrait: true,
+    note: 'Date of birth, photo and verification barcodes removed for privacy.',
+  },
+  {
+    title: 'Build with IBM Bob: From Ideas to Intelligent Solutions', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    pdf: '/certs/ibm-bob-ideas-to-intelligent-solutions.pdf', preview: ibmIdeasPreview, size: [1532, 957],
+  },
+  {
+    title: 'Planning a Website for a Small Business with IBM Bob', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    pdf: '/certs/ibm-bob-small-business-website.pdf', preview: ibmWebsitePreview, size: [1532, 957],
+  },
+  {
+    title: 'How IBM Bob and AI Tools Are Changing the Way Solutions Are Built', issuer: 'IBM SkillsBuild', meta: '2026', color: 'bone',
+    pdf: '/certs/ibm-bob-ai-tools-changing-solutions.pdf', preview: ibmToolsPreview, size: [1532, 957],
+  },
 ]
 
 export default function Experience() {
+  const [openCert, setOpenCert] = useState(null)
+
   return (
     <section id="experience" className="panel panel-blue">
       <div className="seam" />
@@ -46,6 +67,22 @@ export default function Experience() {
         <div className="certs-section">
           <div className="certs-grid">
             {certifications.map(c => {
+              const meta = <span className="cert-meta">{c.issuer}{c.meta ? ` · ${c.meta}` : ''}</span>
+              if (c.pdf) {
+                return (
+                  <button
+                    type="button"
+                    className={`cert-plate cert-${c.color} cert-viewable`}
+                    key={c.title}
+                    onClick={() => setOpenCert(c)}
+                    aria-haspopup="dialog"
+                  >
+                    <span className="cert-title">{c.title}</span>
+                    {meta}
+                    <span className="cert-view">View certificate</span>
+                  </button>
+                )
+              }
               const Tag = c.link ? 'a' : 'div'
               return (
                 <Tag
@@ -54,12 +91,13 @@ export default function Experience() {
                   {...(c.link ? { href: c.link, target: '_blank', rel: 'noreferrer' } : {})}
                 >
                   <span className="cert-title">{c.title}{c.link ? ' ↗' : ''}</span>
-                  <span className="cert-meta">{c.issuer}{c.meta ? ` · ${c.meta}` : ''}</span>
+                  {meta}
                 </Tag>
               )
             })}
           </div>
         </div>
+        <CertDialog cert={openCert} onClose={() => setOpenCert(null)} />
       </div>
       <div className="headlight-sweep" aria-hidden="true" />
     </section>

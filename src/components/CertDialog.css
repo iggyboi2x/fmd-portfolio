@@ -1,0 +1,115 @@
+/* While a certificate is open the page behind it stays put. */
+.modal-open { overflow: hidden; }
+
+.cert-dialog {
+  width: min(980px, calc(100vw - 2rem));
+  max-height: calc(100dvh - 2rem);
+  margin: auto;
+  padding: 0;
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  background: var(--bone);
+  color: var(--ink);
+  box-shadow: 8px 8px 0 var(--ink);
+  overflow: hidden;
+}
+.cert-dialog::backdrop { background: rgba(20, 20, 15, 0.78); }
+
+.cert-dialog-body {
+  display: flex;
+  flex-direction: column;
+  max-height: calc(100dvh - 2rem - 6px);
+}
+
+.cert-dialog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 3px solid var(--ink);
+  background: var(--yellow);
+}
+.cert-dialog-title {
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  line-height: 1.2;
+}
+.cert-dialog-meta {
+  margin-top: 0.25rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+}
+
+.cert-dialog-close {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--ink);
+  background: var(--bone);
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 3px 3px 0 var(--ink);
+  cursor: pointer;
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.cert-dialog-close:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+.cert-dialog-close:active { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* The certificate itself, scaled to fit the screen whatever its orientation. */
+.cert-dialog-frame {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  background: var(--bone-dim);
+}
+.cert-dialog-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: calc(100dvh - 15rem);
+  object-fit: contain;
+  background: #fff;
+  border: 2px solid var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.cert-dialog-frame.is-portrait img { width: auto; max-width: 100%; }
+
+.cert-dialog-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 0.9rem 1.25rem;
+  border-top: 3px solid var(--ink);
+}
+.cert-dialog-note {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  color: var(--ink-soft);
+  max-width: 38rem;
+}
+.cert-dialog-download { padding: 0.65rem 1.2rem; font-size: 0.88rem; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .cert-dialog[open] { animation: cert-in 0.28s var(--ease); }
+  .cert-dialog[open]::backdrop { animation: cert-fade 0.28s ease-out; }
+}
+@keyframes cert-in { from { opacity: 0; transform: translateY(12px) scale(0.97); } }
+@keyframes cert-fade { from { opacity: 0; } }
+
+@media (max-width: 600px) {
+  .cert-dialog-head, .cert-dialog-foot { padding: 0.8rem 0.9rem; }
+  .cert-dialog-frame { padding: 0.75rem; }
+  .cert-dialog-frame img { max-height: calc(100dvh - 16rem); }
+  .cert-dialog-download { width: 100%; justify-content: center; }
+}

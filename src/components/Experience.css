@@ -79,7 +79,26 @@
   box-shadow: 5px 5px 0 var(--ink);
   transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
-.cert-plate:is(a):hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.cert-plate:is(a, button):hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.cert-plate:is(a, button):active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+
+/* Cards that open their certificate in a dialog. */
+button.cert-plate {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+.cert-view {
+  margin-top: auto;
+  padding-top: 0.5rem;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.74rem;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--red);
+}
+.cert-viewable:hover .cert-view { text-decoration-thickness: 2px; }
 
 .cert-bone { background: var(--bone); color: var(--ink); }
 .cert-yellow { background: var(--yellow); color: var(--ink); }
