@@ -79,8 +79,8 @@
   box-shadow: 5px 5px 0 var(--ink);
   transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
 }
-.cert-plate:is(a, button):hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
-.cert-plate:is(a, button):active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
+button.cert-plate:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+button.cert-plate:active { transform: translate(3px, 3px); box-shadow: 1px 1px 0 var(--ink); }
 
 /* Cards that open their certificate in a dialog. */
 button.cert-plate {

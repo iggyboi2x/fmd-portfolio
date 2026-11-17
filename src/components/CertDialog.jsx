@@ -45,7 +45,7 @@ export default function CertDialog({ cert, onClose }) {
             </button>
           </div>
 
-          <div className={`cert-dialog-frame${cert.portrait ? ' is-portrait' : ''}`}>
+          <div className="cert-dialog-frame">
             <img
               src={cert.preview}
               alt={`${cert.title} certificate issued to Francis Miguel Diano`}
