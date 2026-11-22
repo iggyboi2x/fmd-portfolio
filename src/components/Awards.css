@@ -1,0 +1,124 @@
+/* The win gets the one full yellow panel on the site: a bone plate holding
+   the story, with the photos stuck on beside it like decals. */
+.award {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+  gap: 2.5rem;
+  align-items: start;
+  padding: 2rem 2.25rem;
+  background: var(--bone);
+  border: 3px solid var(--ink);
+  border-radius: 12px;
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.award-ribbon {
+  display: inline-block;
+  font-family: var(--display);
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  color: var(--bone);
+  background: var(--red-deep);
+  border: 3px solid var(--ink);
+  border-radius: 6px;
+  box-shadow: 3px 3px 0 var(--ink);
+  padding: 0.3rem 0.8rem;
+  transform: rotate(-2deg);
+}
+
+.award-title {
+  margin-top: 1rem;
+  font-family: var(--display);
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  line-height: 1.1;
+}
+.award-meta {
+  margin-top: 0.4rem;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--ink-soft);
+}
+
+.award-lede {
+  margin-top: 1.4rem;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+.award-lede strong { color: var(--ink); }
+
+.award-features {
+  list-style: none;
+  margin-top: 1.1rem;
+  display: grid;
+  gap: 0.55rem;
+}
+.award-features li {
+  position: relative;
+  padding-left: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.award-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5em;
+  width: 0.65rem;
+  height: 0.65rem;
+  border: 2px solid var(--ink);
+  border-radius: 2px;
+  background: var(--yellow);
+}
+.award-features li:nth-child(3n + 2)::before { background: var(--red); }
+.award-features li:nth-child(3n + 3)::before { background: var(--blue); }
+
+.award-note {
+  margin-top: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+}
+.award-team {
+  margin-top: 1.2rem;
+  padding-top: 1rem;
+  border-top: 2px dashed var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+/* Photo collage: the team shot across the top, trophy and pitch below. */
+.award-gallery {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+  gap: 1rem;
+  /* The story runs longer than the collage; keep the photos in view beside it. */
+  position: sticky;
+  top: 6.5rem;
+}
+.award-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--ink);
+  background: var(--bone-dim);
+}
+.award-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+.photo-team { grid-column: 1 / -1; aspect-ratio: 16 / 9; transform: rotate(-0.8deg); }
+.photo-trophy { aspect-ratio: 4 / 5; transform: rotate(1.2deg); }
+.photo-trophy img { object-position: 50% 35%; }
+.photo-pitch { align-self: end; aspect-ratio: 4 / 3; transform: rotate(-1deg); }
+.photo-pitch img { object-position: 45% 40%; }
+
+@media (max-width: 900px) {
+  .award { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  /* Stacked: photos first, they're the hook. */
+  .award-gallery { position: static; order: -1; }
+}
+@media (max-width: 600px) {
+  .award { padding: 1.4rem; }
+  .award-gallery { gap: 0.75rem; }
+}

@@ -64,14 +64,38 @@
   padding: 8rem 3rem 5rem;
 }
 
-.hero-status {
+.hero-plates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
   margin-bottom: 2.5rem;
+}
+.hero-status {
   font-family: var(--sans);
   font-weight: 700;
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
+.hero-award {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  background: var(--yellow);
+  transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+}
+.hero-award:hover { transform: translate(-2px, -2px); box-shadow: 7px 7px 0 var(--ink); }
+.hero-award-tag {
+  font-family: var(--display);
+  font-size: 0.72rem;
+  color: var(--bone);
+  background: var(--red-deep);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+}
+
 .hero-status-dot {
   width: 8px; height: 8px; border-radius: 50%;
   background: var(--green);

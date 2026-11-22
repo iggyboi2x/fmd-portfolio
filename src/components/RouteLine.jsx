@@ -10,6 +10,7 @@ const STOPS = [
   ['about', 'About'],
   ['skills', 'Skills'],
   ['projects', 'Projects'],
+  ['awards', 'Awards'],
   ['experience', 'Experience'],
   ['contact', 'Contact'],
 ]

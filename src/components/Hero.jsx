@@ -19,9 +19,15 @@ export default function Hero() {
       </div>
 
       <div className="hero-inner">
-        <div className="plate hero-status rise" style={{ '--d': '0ms' }}>
-          <span className="hero-status-dot" />
-          Open to work — internships &amp; freelance
+        <div className="hero-plates">
+          <div className="plate hero-status rise" style={{ '--d': '0ms' }}>
+            <span className="hero-status-dot" />
+            Open to work — internships &amp; freelance
+          </div>
+          <a href="#awards" className="plate hero-award rise" style={{ '--d': '60ms' }}>
+            <span className="hero-award-tag">1st place</span>
+            ICS × IBM Bobathon 2026
+          </a>
         </div>
 
         <h1 className="hero-name">
