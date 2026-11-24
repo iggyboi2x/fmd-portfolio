@@ -146,6 +146,14 @@
   box-shadow: 5px 5px 0 var(--ink);
   overflow: hidden;
 }
+.poster-frame {
+  border: 3px solid var(--ink);
+  border-radius: 8px;
+  box-shadow: 5px 5px 0 var(--ink);
+  overflow: hidden;
+  background: var(--bone);
+}
+
 .browser-bar {
   display: flex;
   align-items: center;

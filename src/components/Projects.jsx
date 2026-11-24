@@ -6,6 +6,7 @@ import sweetbakesShot from '../assets/projects/sweetbakes.webp'
 import chaturmateShot from '../assets/projects/chaturmate.webp'
 import nutrioPantry from '../assets/projects/nutrio-1.webp'
 import nutrioMeals from '../assets/projects/nutrio-3.webp'
+import bobeyePoster from '../assets/projects/bobeye.webp'
 import './Projects.css'
 
 const projects = [
@@ -32,6 +33,16 @@ const projects = [
     demo: 'https://stringguard.online/',
     repo: null,
     media: { type: 'browser', src: stringguardShot, alt: 'StringGuard secure notepad start screen' },
+  },
+  {
+    title: 'BobEye',
+    color: 'green',
+    desc: "1st place at the ICS × IBM Bobathon 2026. Built with my team in two days using IBM Bob — a child-safety guardian for Filipino families. An Electron agent on the child's PC checks the screen on-device for grooming, threats and explicit images in English, Tagalog and Taglish; a Chrome extension blocks harmful and phishing sites with a URL model; and parents get live alerts on a React dashboard. Explicit images are blurred before anything leaves the PC.",
+    stack: ['Electron', 'React', 'TypeScript', 'Supabase', 'TensorFlow.js', 'Tesseract.js', 'Chrome Extension'],
+    demo: null,
+    repo: null,
+    award: '#awards',
+    media: { type: 'poster', src: bobeyePoster, alt: "BobEye mascot and logo: your child's safety in your own hands" },
   },
   {
     title: 'Freesoul Cyber Gadgets',
@@ -91,6 +102,14 @@ function ProjectMedia({ media, demo }) {
       </figure>
     )
   }
+  if (media.type === 'poster') {
+    // Projects with no public site (private repo, desktop app) show a branded panel instead of a screenshot.
+    return (
+      <figure className="project-media poster-frame">
+        <img src={media.src} alt={media.alt} width="960" height="465" loading="lazy" decoding="async" />
+      </figure>
+    )
+  }
   return (
     <figure className="project-media browser-frame">
       <div className="browser-bar" aria-hidden="true">
@@ -124,6 +143,7 @@ export default function Projects() {
                     <div className="project-links">
                       {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="project-link">Live ↗</a>}
                       {p.repo && <a href={p.repo} target="_blank" rel="noreferrer" className="project-link">GitHub ↗</a>}
+                      {p.award && <a href={p.award} className="project-link">1st Place ↓</a>}
                     </div>
                   </div>
                   <p className="project-desc">{p.desc}</p>
