@@ -8,6 +8,7 @@ import nutrioPantry from '../assets/projects/nutrio-1.webp'
 import nutrioMeals from '../assets/projects/nutrio-3.webp'
 import bobeyePoster from '../assets/projects/bobeye.webp'
 import bsnShot from '../assets/projects/bsn-acquaintance.webp'
+import psitsShot from '../assets/projects/psits-voting.webp'
 import './Projects.css'
 
 const projects = [
@@ -70,6 +71,7 @@ const projects = [
     stack: ['React', 'Vite', 'Tailwind CSS', 'Express', 'PostgreSQL', 'JWT', 'bcryptjs'],
     demo: null,
     repo: 'https://github.com/ire-zepelli/voting-system',
+    media: { type: 'poster', src: psitsShot, alt: 'UCLM PSITS student election voting page with a live countdown' },
   },
   {
     title: 'Marina Seaview',
