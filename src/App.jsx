@@ -1,4 +1,5 @@
 import './index.css'
+import { Analytics } from '@vercel/analytics/react'
 import { useMagneticButtons, useScrollReveal } from './effects'
 import Navbar from './components/Navbar'
 import RouteLine from './components/RouteLine'
@@ -33,6 +34,7 @@ function App() {
       <Contact />
       <Footer />
       <ChatWidget />
+      <Analytics />
     </>
   )
 }
