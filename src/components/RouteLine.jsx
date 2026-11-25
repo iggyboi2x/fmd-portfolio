@@ -13,6 +13,7 @@ const STOPS = [
   ['projects', 'Projects'],
   ['awards', 'Awards'],
   ['certifications', 'Certs'], // short: the full word overlaps content at 1366px
+  ['github', 'GitHub'],
   ['contact', 'Contact'],
 ]
 

@@ -9,6 +9,7 @@ import Projects from './components/Projects'
 import Awards from './components/Awards'
 import Education from './components/Education'
 import Certifications from './components/Certifications'
+import GitHubActivity from './components/GitHubActivity'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -27,6 +28,7 @@ function App() {
       <Projects />
       <Awards />
       <Certifications />
+      <GitHubActivity />
       <Contact />
       <Footer />
     </>
