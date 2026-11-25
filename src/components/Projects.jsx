@@ -56,15 +56,6 @@ const projects = [
     media: { type: 'browser', src: bsnShot, alt: 'BSN Acquaintance Party 2026 Celestial Garden landing page' },
   },
   {
-    title: 'Freesoul Cyber Gadgets',
-    color: 'red',
-    desc: 'Built with my dev team — a concept full-stack business website modeled on a local device repair shop, featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Three.js', 'Resend'],
-    demo: 'https://freesoul-ph.vercel.app/',
-    repo: null,
-    media: { type: 'browser', src: freesoulShot, alt: 'Freesoul Cyber Gadgets homepage' },
-  },
-  {
     title: 'UCLM PSITS Voting System',
     color: 'blue',
     desc: 'Co-developed and deployed a real-time digital balloting platform used by the UCLM CCS department to elect a new slate of PSITS student officers, handling concurrent voters and live vote updates.',
@@ -72,6 +63,24 @@ const projects = [
     demo: null,
     repo: 'https://github.com/ire-zepelli/voting-system',
     media: { type: 'poster', src: psitsShot, alt: 'UCLM PSITS student election voting page with a live countdown' },
+  },
+  {
+    title: 'ChatUrMate',
+    color: 'green',
+    desc: 'A random one-to-one video chat platform with private invite-code rooms — a realtime matchmaking queue with instant "Next" pairing, text, image and voice messages over WebRTC, Meet-style spotlight and reactions, and report-and-block safety tools that end a session on the spot. Media credentials never reach the browser; clients get short-lived, room-scoped tokens.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'LiveKit', 'WebRTC', 'Supabase'],
+    demo: 'https://chaturmate.vercel.app/',
+    repo: null,
+    media: { type: 'browser', src: chaturmateShot, alt: 'ChatUrMate homepage' },
+  },
+  {
+    title: 'Freesoul Cyber Gadgets',
+    color: 'red',
+    desc: 'Built with my dev team — a concept full-stack business website modeled on a local device repair shop, featuring a service inquiry system, real-time repair ticket tracker, nationwide quote request form, and a blog with ISR.',
+    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Framer Motion', 'Three.js', 'Resend'],
+    demo: 'https://freesoul-ph.vercel.app/',
+    repo: null,
+    media: { type: 'browser', src: freesoulShot, alt: 'Freesoul Cyber Gadgets homepage' },
   },
   {
     title: 'Marina Seaview',
@@ -90,15 +99,6 @@ const projects = [
     demo: 'https://bst-sweetbakes.vercel.app/',
     repo: null,
     media: { type: 'browser', src: sweetbakesShot, alt: 'BST Sweetbakes homepage' },
-  },
-  {
-    title: 'ChatUrMate',
-    color: 'green',
-    desc: 'A random one-to-one video chat platform with private invite-code rooms — a realtime matchmaking queue with instant "Next" pairing, text, image and voice messages over WebRTC, Meet-style spotlight and reactions, and report-and-block safety tools that end a session on the spot. Media credentials never reach the browser; clients get short-lived, room-scoped tokens.',
-    stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'LiveKit', 'WebRTC', 'Supabase'],
-    demo: 'https://chaturmate.vercel.app/',
-    repo: null,
-    media: { type: 'browser', src: chaturmateShot, alt: 'ChatUrMate homepage' },
   },
 ]
 
