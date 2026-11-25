@@ -5,22 +5,7 @@ import topcitPreview from '../assets/certs/topcit-level-3.webp'
 import ibmIdeasPreview from '../assets/certs/ibm-bob-ideas-to-intelligent-solutions.webp'
 import ibmWebsitePreview from '../assets/certs/ibm-bob-small-business-website.webp'
 import ibmToolsPreview from '../assets/certs/ibm-bob-ai-tools-changing-solutions.webp'
-import './Experience.css'
-
-const education = [
-  {
-    period: '2023 — Present',
-    role: 'Bachelor of Science in Information Technology',
-    company: 'University of Cebu Lapu-Lapu and Mandaue',
-    desc: "Currently in 4th year, Academic Scholar. Focused on full-stack web development, software engineering, and networking fundamentals.",
-  },
-  {
-    period: '2021 — 2023',
-    role: 'Senior High School — TechVoc ICT',
-    company: 'University of Cebu Lapu-Lapu and Mandaue',
-    desc: 'Technical-Vocational track with a focus on ICT. Built a foundation in programming, computer hardware, and systems operations.',
-  },
-]
+import './Certifications.css'
 
 // Accent = issuer, so the color says who issued it, never that one matters more.
 const certifications = [
@@ -48,27 +33,14 @@ const certifications = [
   },
 ]
 
-export default function Experience() {
+export default function Certifications() {
   const [openCert, setOpenCert] = useState(null)
 
   return (
-    <section id="experience" className="panel panel-blue">
+    <section id="certifications" className="panel panel-blue">
       <div className="seam" />
       <div className="wrapper">
-        <h2 className="heading rise">Education &amp;<br /><em>certifications.</em></h2>
-
-        <div className="exp-list">
-          {education.map(e => (
-            <div className="exp-row" key={e.role}>
-              <span className="exp-period">{e.period}</span>
-              <div className="exp-body">
-                <h3 className="exp-role">{e.role}</h3>
-                <p className="exp-company">{e.company}</p>
-                <p className="exp-desc">{e.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        <h2 className="heading rise">Certified <em>&amp; verified.</em></h2>
 
         <div className="certs-section">
           <div className="certs-grid">
@@ -95,7 +67,6 @@ export default function Experience() {
         </div>
         <CertDialog cert={openCert} onClose={() => setOpenCert(null)} />
       </div>
-      <div className="headlight-sweep" aria-hidden="true" />
     </section>
   )
 }

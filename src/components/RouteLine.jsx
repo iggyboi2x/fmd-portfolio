@@ -8,10 +8,11 @@ import './RouteLine.css'
 const STOPS = [
   ['hero', 'Start'],
   ['about', 'About'],
+  ['education', 'Education'],
   ['skills', 'Skills'],
   ['projects', 'Projects'],
   ['awards', 'Awards'],
-  ['experience', 'Experience'],
+  ['certifications', 'Certs'], // short: the full word overlaps content at 1366px
   ['contact', 'Contact'],
 ]
 

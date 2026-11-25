@@ -1,6 +1,7 @@
 /* Only where the page has a side margin wide enough for the line and its
-   longest label ("Experience") to sit clear of the content column — below
-   1360px it would overlap the 1120px wrapper's left edge. */
+   longest label ("Education") to sit clear of the content column — below
+   1360px it would overlap the 1120px wrapper's left edge. Keep labels this
+   short ("Certs", not "Certifications"). */
 .route-line { display: none; }
 
 @media (min-width: 1360px) {
