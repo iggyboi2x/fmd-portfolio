@@ -25,7 +25,7 @@ export default function Hero() {
             Open to work — internships &amp; freelance
           </div>
           <a href="#awards" className="plate hero-award rise" style={{ '--d': '60ms' }}>
-            <span className="hero-award-tag">1st place</span>
+            <span className="hero-award-tag">Champion</span>
             ICS × IBM Bobathon 2026
           </a>
         </div>

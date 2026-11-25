@@ -22,7 +22,7 @@ export default function Awards() {
 
         <article className="award">
           <div className="award-copy">
-            <span className="award-ribbon">1st Place</span>
+            <span className="award-ribbon">Champion</span>
             <h3 className="award-title">ICS × IBM Bobathon 2026</h3>
             <p className="award-meta">Future Builders: From Ideas to Impact · Nov 19–20, 2026 · University of Cebu</p>
 
@@ -49,16 +49,17 @@ export default function Awards() {
 
           <div className="award-gallery">
             <figure className="award-photo photo-team">
-              <img src={teamPhoto} alt="The BobEye team holding the first-place trophy and certificates at the ICS × IBM Bobathon" width="1400" height="788" loading="lazy" decoding="async" />
+              <img src={teamPhoto} alt="The BobEye team holding the champion's trophy and certificates at the ICS × IBM Bobathon" width="1400" height="788" loading="lazy" decoding="async" />
             </figure>
             <figure className="award-photo photo-trophy">
-              <img src={trophyPhoto} alt="The Bobathon first-place trophy, certificate of participation and 1st Place card" width="480" height="853" loading="lazy" decoding="async" />
+              <img src={trophyPhoto} alt="The Bobathon champion's trophy, certificate of participation and winner's card" width="480" height="853" loading="lazy" decoding="async" />
             </figure>
             <figure className="award-photo photo-pitch">
               <img src={presentingPhoto} alt="The team presenting BobEye to the judges" width="1000" height="562" loading="lazy" decoding="async" />
             </figure>
           </div>
         </article>
+
       </div>
     </section>
   )

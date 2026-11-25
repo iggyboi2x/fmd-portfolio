@@ -13,7 +13,7 @@ export const TOPICS = [
     id: 'projects',
     question: 'Tell me about his projects',
     keywords: ['project', 'built', 'build', 'work', 'portfolio', 'app', 'made', 'experience'],
-    answer: 'His main projects are Nutrio (an AI meal-planning Android app), StringGuard (an encrypted notes app), BobEye (a child-safety guardian that won 1st place at the ICS × IBM Bobathon 2026), the seating portal for the ~1,440-guest BSN Acquaintance Party, a live campus voting system, and ChatUrMate (random video chat). They are all in the Projects section.',
+    answer: 'His main projects are Nutrio (an AI meal-planning Android app), StringGuard (an encrypted notes app), BobEye (a child-safety guardian that was crowned Champion of the ICS × IBM Bobathon 2026), the seating portal for the ~1,440-guest BSN Acquaintance Party, a live campus voting system, and ChatUrMate (random video chat). They are all in the Projects section.',
   },
   {
     id: 'hire',
@@ -34,8 +34,8 @@ export const TOPICS = [
   },
   {
     id: 'award',
-    keywords: ['award', 'win', 'won', 'hackathon', 'bobathon', 'prize', 'first place', '1st', 'competition'],
-    answer: 'Francis and his team won 1st place at the ICS × IBM Bobathon 2026 (Nov 19–20, University of Cebu) with BobEye, a child-safety guardian they built in two days with IBM Bob. The full story is in the Awards section.',
+    keywords: ['award', 'win', 'won', 'hackathon', 'bobathon', 'prize', 'first place', '1st', 'champion', 'competition'],
+    answer: 'Francis and his team were crowned Champion of the ICS × IBM Bobathon 2026 (Nov 19–20, University of Cebu) with BobEye, a child-safety guardian they built in two days with IBM Bob. The full story is in the Awards section.',
   },
   {
     id: 'certs',
@@ -60,7 +60,7 @@ export const TOPICS = [
   {
     id: 'bobeye',
     keywords: ['bobeye', 'child', 'safety', 'parent', 'chrome extension', 'electron'],
-    answer: "BobEye is a child-safety guardian that won 1st place at the ICS × IBM Bobathon 2026. It checks a child's PC on-device for grooming, threats and harmful sites, and alerts parents in seconds. Francis built the Chrome extension's blocklist and URL-model checks and the severity-scoring rules.",
+    answer: "BobEye is a child-safety guardian that was crowned Champion of the ICS × IBM Bobathon 2026. It checks a child's PC on-device for grooming, threats and harmful sites, and alerts parents in seconds. Francis built the Chrome extension's blocklist and URL-model checks and the severity-scoring rules.",
   },
   {
     id: 'stringguard',

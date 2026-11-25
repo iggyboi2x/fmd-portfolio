@@ -39,7 +39,7 @@ const projects = [
   {
     title: 'BobEye',
     color: 'green',
-    desc: "1st place at the ICS × IBM Bobathon 2026. Built with my team in two days using IBM Bob — a child-safety guardian for Filipino families. An Electron agent on the child's PC checks the screen on-device for grooming, threats and explicit images in English, Tagalog and Taglish; a Chrome extension blocks harmful and phishing sites with a URL model; and parents get live alerts on a React dashboard. Explicit images are blurred before anything leaves the PC.",
+    desc: "Champion of the ICS × IBM Bobathon 2026. Built with my team in two days using IBM Bob — a child-safety guardian for Filipino families. An Electron agent on the child's PC checks the screen on-device for grooming, threats and explicit images in English, Tagalog and Taglish; a Chrome extension blocks harmful and phishing sites with a URL model; and parents get live alerts on a React dashboard. Explicit images are blurred before anything leaves the PC.",
     stack: ['Electron', 'React', 'TypeScript', 'Supabase', 'TensorFlow.js', 'Tesseract.js', 'Chrome Extension'],
     demo: null,
     repo: null,
@@ -155,7 +155,7 @@ export default function Projects() {
                     <div className="project-links">
                       {p.demo && <a href={p.demo} target="_blank" rel="noreferrer" className="project-link">Live ↗</a>}
                       {p.repo && <a href={p.repo} target="_blank" rel="noreferrer" className="project-link">GitHub ↗</a>}
-                      {p.award && <a href={p.award} className="project-link">1st Place ↓</a>}
+                      {p.award && <a href={p.award} className="project-link">Champion ↓</a>}
                     </div>
                   </div>
                   <p className="project-desc">{p.desc}</p>
