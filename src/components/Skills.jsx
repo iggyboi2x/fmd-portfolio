@@ -1,4 +1,5 @@
 import Ticker from './Ticker'
+import TechIcon from './TechIcon'
 import './Skills.css'
 
 const skillGroups = [
@@ -37,6 +38,7 @@ export default function Skills() {
                     key={item}
                     style={{ '--sway-delay': `${(i % 5) * -0.9}s`, '--sway-dur': `${4.5 + (i % 4) * 0.6}s` }}
                   >
+                    <TechIcon name={item} />
                     {item}
                   </span>
                 ))}

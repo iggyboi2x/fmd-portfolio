@@ -32,6 +32,9 @@
 }
 
 .skill-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
   font-family: var(--mono);
   font-weight: 500;
   font-size: 0.8rem;
@@ -66,4 +69,11 @@
 
 @media (max-width: 600px) {
   .skills-group-head { flex-direction: column; gap: 0.25rem; }
+}
+
+/* Tech logo inside a pill: same colour as the pill's text. */
+.tech-icon {
+  width: 1.15em;
+  height: 1.15em;
+  flex-shrink: 0;
 }
