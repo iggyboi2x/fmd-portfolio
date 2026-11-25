@@ -7,6 +7,7 @@ import chaturmateShot from '../assets/projects/chaturmate.webp'
 import nutrioPantry from '../assets/projects/nutrio-1.webp'
 import nutrioMeals from '../assets/projects/nutrio-3.webp'
 import bobeyePoster from '../assets/projects/bobeye.webp'
+import bsnShot from '../assets/projects/bsn-acquaintance.webp'
 import './Projects.css'
 
 const projects = [
@@ -43,6 +44,15 @@ const projects = [
     repo: null,
     award: '#awards',
     media: { type: 'poster', src: bobeyePoster, alt: "BobEye mascot and logo: your child's safety in your own hands" },
+  },
+  {
+    title: 'BSN Acquaintance Party 2026',
+    color: 'yellow',
+    desc: 'Built with my team for the UCLM College of Nursing and its student body organization — the official seating and event portal for a ~1,440-guest celebration at the Mactan Expo Center. Students sign in with emailed access codes and reserve seats in real time across 144 tables and 12 clinical societies, then get a printable digital admission pass; organizers run the roster from an admin console with Excel export. I moved every attendee and seat write behind an authenticated server API with signed tokens and Row-Level Security, and closed the double-booking races.',
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Supabase', 'Vercel Functions', 'Resend'],
+    demo: 'https://www.bsn-acquaintance.online/',
+    repo: null,
+    media: { type: 'browser', src: bsnShot, alt: 'BSN Acquaintance Party 2026 Celestial Garden landing page' },
   },
   {
     title: 'Freesoul Cyber Gadgets',
