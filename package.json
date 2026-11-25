@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test scripts/test/chat-handler.test.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "1.8.0",
     "react": "^19.2.6",
     "react-dom": "^19.2.6"
   },

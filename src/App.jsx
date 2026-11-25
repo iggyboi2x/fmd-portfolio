@@ -12,6 +12,7 @@ import Certifications from './components/Certifications'
 import GitHubActivity from './components/GitHubActivity'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ChatWidget from './components/ChatWidget'
 
 function App() {
   useScrollReveal()
@@ -31,6 +32,7 @@ function App() {
       <GitHubActivity />
       <Contact />
       <Footer />
+      <ChatWidget />
     </>
   )
 }
