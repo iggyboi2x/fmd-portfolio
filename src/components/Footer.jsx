@@ -8,7 +8,7 @@ export default function Footer() {
           <span className="taillight" aria-hidden="true" />
           Francis Miguel Diano 2026
         </span>
-        <span className="footer-note">Designed &amp; built with love · Cebu, PH</span>
+        <span className="footer-note">Cebu, PH</span>
       </div>
     </footer>
   )
