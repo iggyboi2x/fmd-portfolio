@@ -1,6 +1,7 @@
 import teamPhoto from '../assets/awards/bobathon-team.webp'
 import trophyPhoto from '../assets/awards/bobathon-trophy.webp'
 import presentingPhoto from '../assets/awards/bobathon-presenting.webp'
+import ibpapPhoto from '../assets/awards/ibpap-finalists.webp'
 import './Awards.css'
 
 const features = [
@@ -60,6 +61,21 @@ export default function Awards() {
           </div>
         </article>
 
+        <article className="award award-secondary">
+          <figure className="award-photo photo-ibpap">
+            <img src={ibpapPhoto} alt="Participants of Can You HackIT? The IBPAP Challenge in Cebu, gathered on stage at CIT University" width="1400" height="934" loading="lazy" decoding="async" />
+          </figure>
+          <div className="award-copy">
+            <span className="award-ribbon ribbon-finalist">Finalist</span>
+            <h3 className="award-title">Can You HackIT: The IBPAP Challenge</h3>
+            <p className="award-meta">Cebu · IT &amp; Business Process Association of the Philippines (IBPAP) · CIT University</p>
+            <p className="award-lede">
+              Reached the finals of the Cebu edition of <strong>Can You HackIT</strong>, IBPAP&apos;s
+              hackathon for student developers, hosted at Cebu Institute of Technology – University.
+            </p>
+            <p className="award-credit">Photo: CIT University</p>
+          </div>
+        </article>
       </div>
     </section>
   )

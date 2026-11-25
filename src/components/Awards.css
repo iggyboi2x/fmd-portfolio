@@ -113,6 +113,21 @@
 .photo-pitch { align-self: end; aspect-ratio: 4 / 3; transform: rotate(-1deg); }
 .photo-pitch img { object-position: 45% 40%; }
 
+/* Second award: photo first, a blue Finalist ribbon to tell it apart. */
+.award-secondary {
+  margin-top: 2.5rem;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  align-items: center;
+}
+.photo-ibpap { aspect-ratio: 3 / 2; transform: rotate(0.8deg); }
+.ribbon-finalist { background: var(--blue-deep); transform: rotate(2deg); }
+.award-credit {
+  margin-top: 1rem;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-soft);
+}
+
 @media (max-width: 900px) {
   .award { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
   /* Stacked: photos first, they're the hook. */

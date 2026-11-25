@@ -34,8 +34,8 @@ export const TOPICS = [
   },
   {
     id: 'award',
-    keywords: ['award', 'win', 'won', 'hackathon', 'bobathon', 'prize', 'first place', '1st', 'champion', 'competition'],
-    answer: 'Francis and his team were crowned Champion of the ICS × IBM Bobathon 2026 (Nov 19–20, University of Cebu) with BobEye, a child-safety guardian they built in two days with IBM Bob. The full story is in the Awards section.',
+    keywords: ['award', 'win', 'won', 'hackathon', 'bobathon', 'prize', 'first place', '1st', 'champion', 'competition', 'ibpap', 'hackit', 'finalist'],
+    answer: 'Francis and his team were crowned Champion of the ICS × IBM Bobathon 2026 (Nov 19–20, University of Cebu) with BobEye, a child-safety guardian they built in two days with IBM Bob. He was also a finalist in Can You HackIT: The IBPAP Challenge in Cebu. Both are in the Awards section.',
   },
   {
     id: 'certs',
