@@ -1,22 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
+import { SUGGESTED, answer } from './chatAnswers'
 import './ChatWidget.css'
 
-const GREETING = "Hi! I'm Francis's AI assistant. Ask me about his skills, projects, awards or how to reach him."
-
-// Answers for the suggested questions, used when the AI is offline (no API
-// key yet, or the service is down) so the widget is never a dead end.
-const SUGGESTIONS = {
-  "What's his tech stack?":
-    'Francis builds production work with React, Next.js, Tailwind CSS, Supabase, Vite and SQL, and is experienced with TypeScript, React Native (Expo), Node.js, Express, PHP, Laravel, LiveKit (WebRTC), the Claude API, Figma and Vercel.',
-  'Tell me about his projects':
-    'His main projects are Nutrio (an AI meal-planning Android app), StringGuard (an encrypted notes app), BobEye (a child-safety guardian that won 1st place at the ICS × IBM Bobathon 2026), the seating portal for the ~1,440-guest BSN Acquaintance Party, a live campus voting system, and ChatUrMate (random video chat). They are all in the Projects section.',
-  'Is he open to work?':
-    "Yes. Francis is open to internships and freelance projects, remote or in Cebu. He's a 4th-year BSIT student at UCLM, graduating in 2027.",
-  'How can I contact him?':
-    'Email francismigueldiano@gmail.com, use the contact form at the bottom of this page, or find him on LinkedIn: linkedin.com/in/francis-miguel-diano-091760316.',
-}
-const OFFLINE = "The assistant can't answer free-form questions right now. Use the contact form at the bottom of the page, or email francismigueldiano@gmail.com."
+const GREETING = "Hi! Ask me about Francis's skills, projects, awards or how to reach him."
 const MAX_CHARS = 500
+const REPLY_DELAY_MS = 350 // a short pause so the answer doesn't feel jarring
 
 export default function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -40,29 +28,16 @@ export default function ChatWidget() {
     fabRef.current?.focus()
   }
 
-  async function ask(question) {
+  function ask(question) {
     const q = question.trim().slice(0, MAX_CHARS)
     if (!q || busy) return
-    const history = [...messages, { role: 'user', content: q }]
-    setMessages(history)
+    setMessages(m => [...m, { role: 'user', content: q }])
     setInput('')
     setBusy(true)
-    let reply
-    try {
-      const r = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: history }),
-      })
-      const data = await r.json().catch(() => ({}))
-      if (r.ok && data.reply) reply = data.reply
-      else if (r.status === 503 || r.status === 404 || data.error === 'offline') reply = SUGGESTIONS[q] ?? OFFLINE
-      else reply = data.error || 'Something went wrong. Please try again.'
-    } catch {
-      reply = SUGGESTIONS[q] ?? OFFLINE
-    }
-    setMessages(m => [...m, { role: 'assistant', content: reply }])
-    setBusy(false)
+    setTimeout(() => {
+      setMessages(m => [...m, { role: 'assistant', content: answer(q) }])
+      setBusy(false)
+    }, REPLY_DELAY_MS)
   }
 
   return (
@@ -75,10 +50,10 @@ export default function ChatWidget() {
           onKeyDown={e => { if (e.key === 'Escape') close() }}
         >
           <header className="chat-head">
-            <span className="chat-badge" aria-hidden="true">✦</span>
+            <span className="chat-badge" aria-hidden="true">?</span>
             <div>
               <h2 className="chat-title">Ask about Francis</h2>
-              <p className="chat-sub">AI assistant</p>
+              <p className="chat-sub">Quick answers</p>
             </div>
             <button type="button" className="chat-close" onClick={close} aria-label="Close chat">✕</button>
           </header>
@@ -87,8 +62,8 @@ export default function ChatWidget() {
             <p className="chat-msg from-assistant">{GREETING}</p>
             {messages.length === 0 && (
               <div className="chat-chips">
-                {Object.keys(SUGGESTIONS).map(s => (
-                  <button type="button" key={s} className="chat-chip" onClick={() => ask(s)}>{s}</button>
+                {SUGGESTED.map(t => (
+                  <button type="button" key={t.id} className="chat-chip" onClick={() => ask(t.question)}>{t.question}</button>
                 ))}
               </div>
             )}
@@ -110,7 +85,7 @@ export default function ChatWidget() {
             />
             <button type="submit" className="chat-send" disabled={!input.trim() || busy} aria-label="Send">➤</button>
           </form>
-          <p className="chat-note">AI can make mistakes. For anything important, use the contact form.</p>
+          <p className="chat-note">Answers are pre-written. For anything else, use the contact form.</p>
         </section>
       )}
 
