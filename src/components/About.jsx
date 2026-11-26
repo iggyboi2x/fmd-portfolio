@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import './About.css'
 
-const PROJECTS_SHIPPED = 5
+const PROJECTS_SHIPPED = 8 // live projects; BobEye (private) isn't counted
 const COUNT_MS = 1100
 const REV_MS = 1400
 
@@ -65,8 +65,8 @@ export default function About() {
           <div className="about-stat-row" ref={statRef}>
             <div className="about-stat plate">
               <span className="stat-num">
-                <span aria-hidden="true">{shipped}+</span>
-                <span className="sr-only">{PROJECTS_SHIPPED}+</span>
+                <span aria-hidden="true">{shipped}</span>
+                <span className="sr-only">{PROJECTS_SHIPPED}</span>
               </span>
               <span className="stat-label">Projects shipped<br />to production</span>
             </div>
