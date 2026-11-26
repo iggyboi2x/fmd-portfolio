@@ -1,16 +1,48 @@
-# React + Vite
+# Francis Miguel Diano — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live:** [www.francismigueldiano.com](https://www.francismigueldiano.com)
 
-Currently, two official plugins are available:
+The personal site of Francis Miguel Diano, a full-stack developer and 4th-year BSIT student in
+Cebu, Philippines. It covers my projects, the ICS × IBM Bobathon 2026 win, certifications, live
+GitHub activity, and a way to get in touch.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Highlights
 
-## React Compiler
+- **Projects** with live links and screenshots: Nutrio (AI meal planning, Android), BobEye
+  (Champion, ICS × IBM Bobathon 2026), StringGuard, the BSN Acquaintance Party seating portal,
+  the UCLM PSITS voting system, ChatUrMate, and concept sites.
+- **Certificates** open in an on-page viewer, with personal details redacted where needed.
+- **Live GitHub contribution graph** with total contributions and streaks.
+- **Quick-answer chat** with pre-written answers about my work (no AI, no network calls).
+- A bold "jeepney livery" design: split-flap route sign, LED skills ticker, cursor-tilt project
+  cards, scroll-triggered entrances. All motion turns off for visitors who prefer reduced motion.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Stack
 
-## Expanding the ESLint configuration
+React 19 · Vite · plain CSS per component · deployed on Vercel with Vercel Web Analytics.
+The contact form posts to Formspree.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Run it locally
+
+```sh
+npm install
+npm run dev       # http://localhost:5173
+npm run build     # production build into dist/
+npm run lint
+npm test          # unit tests for the chat's answer matching
+```
+
+## Project notes
+
+- `src/components/` — one component and stylesheet per section.
+- `src/components/chatAnswers.js` — the chat's pre-written answers and keyword matching.
+- `scripts/gen-tech-icons.mjs` — regenerates the skill-pill logos from Simple Icons (CC0) as
+  bare SVG paths, so no icon metadata ships to the browser.
+- `scripts/og-image.html` — source for the link-preview image (`public/og-image.png`); the
+  render command is in the file.
+- `public/certs/` — certificate PDFs shown in the viewer.
+
+## Contact
+
+francismigueldiano@gmail.com · [LinkedIn](https://linkedin.com/in/francis-miguel-diano-091760316)
+· [GitHub](https://github.com/iggyboi2x)
